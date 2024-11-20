@@ -1,0 +1,319 @@
+@import '../../styles/propertySets.css';
+
+.mobileInputRoot {
+  display: none;
+}
+
+.desktopInputRoot {
+  height: var(--topbarHeightDesktop);
+}
+
+
+.mobileIcon {
+  margin-left: 24px;
+  padding: 11px 0 17px 0;
+
+  /* Borders */
+  border-bottom-width: var(--borderRadiusMobileSearch);
+
+  display: flex;
+  width: 24px;
+  align-self: stretch;
+  background-color: var(--matterColorLight);
+}
+
+.mobileInput {
+  flex-grow: 1;
+
+  /* Font */
+  @apply --marketplaceH1FontStyles;
+
+  /* Layout */
+  margin: 0 24px 0 0;
+  padding: 4px 13px 10px 13px;
+  height: var(--TopbarSearchForm_inputHeight);
+  line-height: unset;
+
+  /* Borders */
+  border-bottom-width: var(--borderRadiusMobileSearch);
+
+  /* Safari bugfix: without this Safari will print placeholder to a wrong place */
+  &::-webkit-input-placeholder {
+    line-height: normal;
+  }
+
+  &:hover,
+  &:focus {
+    border-bottom-color: var(--marketplaceColor);
+    outline: none;
+  }
+}
+
+.desktopIcon {
+  height: var(--topbarHeightDesktop);
+  border: none;
+  padding-top: 3px;
+
+  display: flex;
+  width: 24px;
+  align-self: stretch;
+  background-color: var(--matterColorLight);
+}
+
+.desktopInputOld {
+  flex-grow: 1;
+  /* Font */
+  @apply --marketplaceH4FontStyles;
+  height: var(--topbarHeightDesktop);
+  line-height: unset;
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 10px;
+
+  /* Search text gets ellipsis if it's too wide */
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+
+  &:hover,
+  &:focus {
+    border-bottom-color: var(--marketplaceColor);
+    outline: none;
+  }
+
+  &:hover::placeholder,
+  &:focus::placeholder {
+    color: var(--matterColor);
+  }
+
+  /* Placeholder text might be too wide */
+  &::placeholder {
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    font-weight: var(--fontWeightMedium);
+    transition: var(--transitionStyleButton);
+  }
+
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: var(--fontWeightSemiBold);
+  }
+}
+
+/* .bookingDates div{
+  height: 100%;
+} */
+
+.submitButton {
+  background-color: var(--marketplaceColor);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 55px;
+  font-size: 16px;
+  line-height: 22px;
+  margin: auto 0;
+  margin-left: 10px;
+  cursor: pointer;
+  padding: 6px 20px;
+  text-align: center;
+  transition: all ease 0.5s;
+
+  @media (min-width:1800px) {
+    padding: 10px 40px;
+    height: 64px;
+    font-size: 19px;
+    line-height: 26px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  &:hover {
+    transition: all ease 0.5s;
+    background-color: var(--marketplaceColorDark);
+  }
+}
+
+.mobileSearch {
+  border: none;
+  font: normal normal 600 16px/22px Nunito;
+  letter-spacing: 0px;
+  color: var(--marketplaceColorDark);
+  padding: 0;
+  transition: all ease 0.5s;
+
+  @media (max-width:380px) {
+    font: normal normal 600 14px/20px Nunito;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  &:hover {
+    transition: all ease 0.5s;
+    background-color: var(--marketplaceColor);
+  }
+}
+
+.bookingDates {
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.mobilePredictions {
+  position: absolute;
+  top: calc(var(--TopbarSearchForm_inputHeight) - var(--TopbarSearchForm_bottomBorder));
+  left: 0;
+  min-height: calc(100vh - calc(var(--TopbarSearchForm_topbarMargin) + var(--TopbarSearchForm_inputHeight) - var(--TopbarSearchForm_bottomBorder)));
+  width: 100%;
+  background-color: var(--marketplaceColor);
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+  box-shadow: var(--boxShadowPopup);
+  z-index: calc(var(--zIndexPopup) + 1);
+}
+
+.mobilePredictionsAttribution {
+  /* When using the Google Maps Places geocoder, the "Powered by Google"
+   text is hidden in Mobile Safari without giving some extra space to
+   it. */
+  margin-bottom: 100px;
+}
+
+.desktopPredictions {
+  position: absolute;
+  width: 100%;
+  top: calc(100% + 10px);
+  left: -24px;
+  background-color: var(--marketplaceColor);
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+  box-shadow: var(--boxShadowPopup);
+  z-index: calc(var(--zIndexPopup) + 1);
+  min-width: 290px;
+  max-width: 434px;
+
+  & li {
+    font: normal normal normal 14px/20px Nunito;
+
+    & span {
+      font: normal normal normal 14px/20px Nunito;
+    }
+  }
+}
+
+.bookingDates {}
+
+.bookingDates>div {
+  height: 100%;
+  width: 100%;
+}
+
+.bookingDates>div>div {
+  height: 100%;
+}
+
+.bookingDates>div>div>div {
+  height: 100%;
+}
+
+.bookingDates>div>div>div>div {
+  height: 100%;
+}
+
+
+.searchSec {
+  display: none;
+
+  @media (--viewportMedium) {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (min-width: 1201px) {
+    width: calc(227px + 185px * 2);
+  }
+
+  & .searchFieldSec {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    margin: auto 0;
+    max-width: 100%;
+    height: 55px;
+    min-width: 227px;
+    margin-right: 10px;
+    padding: 0 14px;
+
+    @media (min-width:1800px) {
+      height: 64px;
+    }
+
+    @media (min-width:1800px) {
+      padding: 0 24px;
+    }
+
+    &>label {
+      font: normal normal normal 13px/18px Nunito;
+      letter-spacing: 0px;
+      color: #A2A2A2;
+      opacity: 0.54;
+      margin: 0 0 3px 0;
+      padding: 0;
+      position: relative;
+      top: 13px;
+    }
+
+    & .desktopInput {
+      width: 100%;
+      border: none;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--marketplaceColor);
+      font-family: var(--fontFamily2);
+      font-weight: bold;
+      padding: 0;
+
+      @media (min-width:1800px) {
+        font-size: 20px;
+        line-height: 27px;
+      }
+
+      &::placeholder {
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--marketplaceColor);
+        font-family: var(--fontFamily2);
+
+        @media (min-width:1800px) {
+          font-size: 20px;
+          line-height: 27px;
+        }
+      }
+    }
+
+  }
+}
+
+.whiteNavSearch {}
+
+.blackNavSearch {
+  & .submitButton {
+    background-color: var(--marketplaceColorDark);
+
+    &:hover {
+      background-color: var(--marketplaceColor);
+    }
+  }
+}

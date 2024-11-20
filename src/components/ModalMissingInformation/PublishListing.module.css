@@ -1,0 +1,54 @@
+@import '../../styles/propertySets.css';
+
+.modalContent {
+  padding: 15px;
+  color: var(--matterColorDark);
+  text-align: center;
+}
+
+.modalTitle {
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.modalText {
+  & p {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+.button {
+  color: var(--failColorLight);
+  background-color: var(--marketplaceColorMiddle);
+  border-radius: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* margin-top: 10px; */
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  max-width: 100%;
+  min-width: 100px;
+  margin-bottom: 20px;
+
+  @media (--viewportMedium) {
+    min-width: 253px;
+    max-width: 253px;
+    margin-bottom: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--marketplaceColor);
+  }
+}
+.closeModalBtn {
+  margin: 30px auto;
+}

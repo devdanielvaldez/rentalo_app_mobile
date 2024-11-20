@@ -1,0 +1,103 @@
+@import '../../styles/customMediaQueries.css';
+
+.content {
+  box-shadow: 0 0 3px #ddd;
+  background-color: var(--matterColorLight);
+  padding: 30px;
+  width: 100%;
+  margin-bottom: 5rem;
+  /* height: 100%; */
+
+  @media (min-width: 1280px) {
+    width: 60%;
+  }
+}
+
+@media (max-width: 767px) {
+  .sideNav {
+    display: none;
+  }
+}
+
+.desktopTopbar,
+.mobileTopbar {
+  box-shadow: none;
+}
+
+.title {
+  font: normal normal bold 20px/28px Nunito;
+  letter-spacing: 0px;
+  color: #000000;
+  margin: 0 0 20px 0;
+
+  @media (--viewportSmall) {
+    font: normal normal bold 24px/30px Nunito;
+  }
+
+  @media (--viewportLarge) {
+    font: normal normal bold 28px/38px Nunito;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contentWrapper {
+    margin: 10px;
+  }
+}
+
+.contentWrapper {
+  padding: 0 24px;
+
+  @media (--viewportLarge) {
+    padding: 0 36px;
+    margin-top: 60px;
+  }
+}
+.subTitle {
+  font-family: var(--fontFamily);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--marketplaceColor);
+  line-height: 24px;
+}
+
+.buttonsHolder {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.button {
+  color: var(--failColorLight);
+  background-color: var(--marketplaceColorMiddle);
+  border-radius: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+
+  @media (--viewportMedium) {
+    width: auto;
+    padding: 1rem 2rem;
+    min-width: auto;
+    max-width: 253px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--marketplaceColor);
+    text-decoration: none;
+  }
+}
+.successIcon {
+  margin-bottom: 0.25rem;
+  margin-right: 0.25rem;
+  font-size: 20px;
+}

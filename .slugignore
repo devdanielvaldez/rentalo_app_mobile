@@ -1,0 +1,12 @@
+*.psd
+*.pdf
+/test
+/spec
+./docs
+/docs
+.vscode
+./.vscode
+/.vscode
+./build
+/build
+build

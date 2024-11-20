@@ -1,0 +1,17 @@
+@media (max-width: 767px) {
+    .sideNav {
+      display: none;
+    }
+  }
+
+.hostlWrapper {
+  width: 60%;
+
+  @media(max-width: 1440px) {
+    width: 80%;
+  }
+
+  @media(max-width: 1300px) {
+    width: 100%;
+  }
+}

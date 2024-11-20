@@ -1,0 +1,14 @@
+.logoMobile {
+  height: 3pc;
+  width: 90%;
+  object-fit: contain;
+
+  @media (max-width:380px) {
+    height: 34px;
+    width: 90%;
+  }
+
+  & path {
+    fill: var(--marketplaceColor);
+  }
+}

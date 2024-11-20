@@ -1,0 +1,1 @@
+{{transaction.customer.display-name}} ha solicitado reservar {{transaction.listing.title}}

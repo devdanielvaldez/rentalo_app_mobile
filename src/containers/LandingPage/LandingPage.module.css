@@ -1,0 +1,162 @@
+@import '../../styles/customMediaQueries.css';
+
+@media (max-width: 767px) {
+  .sideNav {
+    display: none;
+  }
+}
+
+.staticPageWrapper {
+  width: calc(100% - 158px);
+  margin: 0px 0px 0px 158px;
+  background-color: white;
+  padding-bottom: 50px;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 158px);
+    margin: 0px 0px 0px 158px;
+    padding-bottom: 100px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin: 0px auto !important;
+    width: 100% !important;
+  }
+}
+
+/* heroContainer gives the height for SectionHero */
+/* Safari has a bug with vw padding inside flexbox. Therefore we need an extra div (container) */
+/* If you've lot of content for the hero, multiple lines of text, make sure to adjust min-heights for each media breakpoint accordingly */
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  height: 67.5vh;
+  max-height: 600px;
+  padding: 0;
+
+  @media (--viewportMedium) {
+    min-height: 500px;
+    height: 85vh;
+    max-height: none;
+  }
+
+  @media (--viewportLarge) {
+    max-height: 800px;
+    min-height: 600px;
+    height: calc(70vh - var(--topbarHeightDesktop));
+  }
+}
+
+.whyContainer {
+  background: transparent linear-gradient(180deg, #ffffff 0%, #f4faff 100%) 0% 0% no-repeat
+    padding-box;
+
+  @media (--viewportMedium) {
+    height: auto;
+    min-height: 400px;
+    max-height: none;
+  }
+}
+
+.hero {
+  flex-grow: 1;
+  justify-content: flex-end;
+
+  @media (--viewportLarge) {
+    justify-content: center;
+  }
+}
+
+.SectionHowItWorkItWorks {
+  border-top: solid 1px #fff;
+}
+
+.faqSection {
+  max-width: 80%;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sectionLocation {
+}
+
+.section {
+  padding-left: 60px;
+}
+
+/* Square corners for the last section if it's even */
+.section:nth-of-type(2n):last-of-type {
+  @media (--viewportMedium) {
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+/* Every other section has a light background */
+.section:nth-of-type(2n) {
+  background-color: var(--matterColorLight);
+
+  @media (--viewportMedium) {
+    border-radius: 4px;
+  }
+}
+
+.sectionContentFirstChild {
+  margin-top: 3vh;
+}
+
+/* A bar on top of light sections */
+.section:nth-of-type(2n) .sectionContent::before {
+  /* background: var(--marketplaceColor); */
+  content: '';
+  display: block;
+  width: 109px;
+  height: 6px;
+
+  /* Place the bar on top of .sectionContent top margin */
+  position: relative;
+  top: calc(-1 * var(--LandingPage_sectionMarginTop));
+
+  @media (--viewportMedium) {
+    width: 192px;
+    height: 8px;
+    top: calc(-1 * var(--LandingPage_sectionMarginTopMedium));
+  }
+
+  @media (--viewportLarge) {
+    top: calc(-1 * var(--LandingPage_sectionMarginTopLarge));
+  }
+}
+
+.fixedWidthContainer {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (--viewportXLarge) {
+    max-width: 90%;
+  }
+
+  @media (--viewportXXLarge) {
+    max-width: 90%;
+  }
+}
+
+.vehicleInOnePlace {
+  background: #f8f9f9 0% 0% no-repeat padding-box;
+}
+
+.vehicleWorkSec {
+}
+
+.insuranceSec {
+  background: transparent linear-gradient(180deg, #ffffff 0%, #f4faff 100%) 0% 0% no-repeat
+    padding-box;
+}
+.vehicleRightSec {
+  width: 100%;
+}
+.gifImage {
+  width: 100%;
+  height: auto;
+}

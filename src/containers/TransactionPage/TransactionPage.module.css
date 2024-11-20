@@ -1,0 +1,45 @@
+@import '../../styles/customMediaQueries.css';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  @media (min-width: 768px) {
+    padding-left: var(--sidenavWidth);
+    padding-top: 82px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sideNav {
+    display: none;
+  }
+}
+
+.loading {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.error {
+  margin-left: 24px;
+  margin-right: 24px;
+  color: var(--failColor);
+}
+
+.tabContent {
+  display: none;
+}
+
+.tabContentVisible {
+  display: block;
+}
+
+.footer {
+  display: none;
+
+  @media (--viewportLarge) {
+    display: block;
+  }
+}

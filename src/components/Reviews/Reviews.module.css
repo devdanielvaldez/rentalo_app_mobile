@@ -1,0 +1,139 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  margin: 0;
+}
+
+.reviewItem {
+  margin-bottom: 32px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (--viewportMedium) {
+    margin-bottom: 39px;
+  }
+}
+
+.review {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 564px;
+  flex-shrink: 1;
+  flex-grow: 0;
+  border: 1px solid #e5e5e561;
+  border-radius: 6px;
+  padding: 1pc;
+}
+
+
+.reviewInfo {
+  @apply --marketplaceH5FontStyles;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: var(--matterColorAnti);
+
+  @media (--viewportMedium) {
+    margin-top: 9px;
+  }
+}
+
+.separator {
+  margin: 0 7px;
+}
+
+.mobileReviewRating {
+  display: block;
+  margin-top: 3px;
+  margin-bottom: 9px;
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+}
+
+.desktopReviewRatingWrapper {
+  /* For aligning rating starts in the middle
+   * of a paragraph line */
+  /* position: relative;
+  display: none;
+
+  @media (--viewportMedium) {
+    display: inline;
+  } */
+}
+
+.desktopReviewRating {
+  /* For aligning rating starts in the middle
+   * of a paragraph line */
+  display: inline-flex;
+  /* position: absolute; */
+  /* top: 4px; */
+  white-space: nowrap;
+}
+
+.reviewRatingStar {
+  height: 12px;
+  width: 12px;
+  margin-right: 2px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.reviewBlock {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & .reviewLeftBlock {
+    display: flex;
+    align-items: center;
+    font: normal normal normal 13px/25px Nunito;
+    letter-spacing: 0px;
+    color: #919191;
+    width: 100%;
+
+    & .avatar {
+      flex-shrink: 0;
+      margin-right: 10px;
+      width: 27px;
+      height: 27px;
+      border-radius: 100px;
+    }
+
+    & .userName {
+      font: normal normal normal 14px/25px Roboto;
+      letter-spacing: 0px;
+      color: #393939;
+      margin: 0;
+    }
+
+    & .desktopSeparator {
+      margin: 0 6px;
+      display: inline-block;
+      color: #E5E5E5;
+
+      @media (--viewportMedium) {
+        margin: 0 15px;
+      }
+    }
+  }
+
+  & .reviewRightBlock {
+    width: 100%;
+    margin-top: 15px;
+    background: #F8F6F666 0% 0% no-repeat padding-box;
+    border-radius: 2px;
+    padding: 15px;
+
+    & .reviewContent {
+      font: normal normal normal 16px/25px Roboto;
+      letter-spacing: 0px;
+      color: #1A1A1A;
+      margin: 0;
+    }
+  }
+}

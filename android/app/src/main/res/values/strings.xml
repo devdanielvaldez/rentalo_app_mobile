@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Rentalo</string>
+    <string name="title_activity_main">Rentalo</string>
+    <string name="package_name">app.rentalo.oficial</string>
+    <string name="custom_url_scheme">app.rentalo.oficial</string>
+</resources>

@@ -1,0 +1,49 @@
+.root {
+  display: flex;
+  flex-direction: row;
+
+  @media (--viewportLarge) {
+    padding: 30px;
+    max-width: 30%;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  @media (--viewportLargeWithPaddings) {
+    max-width: 25%;
+  }
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+
+  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (--viewportLarge) {
+    align-items: flex-end;
+    flex-direction: column;
+    overflow-x: auto;
+  }
+}
+
+.tab {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+
+  @media (--viewportLarge) {
+    margin-top: 24px;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}

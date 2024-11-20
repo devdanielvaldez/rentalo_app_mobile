@@ -1,0 +1,78 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  @apply --marketplaceModalFormRootStyles;
+
+  justify-content: flex-start;
+
+  @media (--viewportMedium) {
+    justify-content: space-between;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+
+  & label {
+    margin-bottom: 0;
+    font: normal normal medium 15px/20px Roboto;
+    letter-spacing: 0px;
+    color: #090909;
+  }
+}
+
+.form>input {
+  width: 30px;
+  height: 15px;
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  @media (--viewportMedium) {
+    margin-top: 32px;
+  }
+}
+
+.firstNameRoot {
+  width: calc(34% - 9px);
+}
+
+.lastNameRoot {
+  width: calc(66% - 9px);
+}
+
+.password {
+  @apply --marketplaceModalPasswordMargins;
+}
+
+.bottomWrapper {
+  @apply --marketplaceModalBottomWrapper;
+  & button{
+    width: 300px;
+    margin: 0 auto;
+  }
+}
+
+.bottomWrapperText {
+  @apply --marketplaceModalBottomWrapperText;
+}
+
+.termsText {
+  @apply --marketplaceModalHelperText;
+}
+
+.termsLink {
+  @apply --marketplaceModalHelperLink;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

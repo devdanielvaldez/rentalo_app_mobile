@@ -1,0 +1,12 @@
+.extendTripModal {
+  min-height: 100vh;
+}
+
+.modalTitle {
+  margin: 0;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 34px;
+  letter-spacing: 0.2px;
+  color: var(--matterColorDark);
+}

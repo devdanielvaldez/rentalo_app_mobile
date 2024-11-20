@@ -1,0 +1,236 @@
+@import '../../styles/customMediaQueries.css';
+@import '../../styles/propertySets.css';
+
+.root {
+  background-color: var(--matterColorLight);
+}
+
+.checkFileText {
+  padding-left: 30px;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.content {
+  box-shadow: 0 0 3px #ddd;
+  background-color: var(--matterColorLight);
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+
+  @media (min-width:1280px) {
+    width: 60%;
+  }
+}
+
+@media (max-width: 767px) {
+  .sideNav {
+    display: none;
+  }
+}
+
+.headingContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  font: normal normal bold 20px/28px Nunito;
+  letter-spacing: 0px;
+  color: #000000;
+  margin: 0 0 20px 0;
+
+  @media (--viewportSmall) {
+    font: normal normal bold 24px/30px Nunito;
+  }
+
+  @media (--viewportLarge) {
+    font: normal normal bold 28px/38px Nunito;
+  }
+}
+
+.profileLink {
+  @apply --marketplaceButtonStylesSecondary;
+  @apply --marketplaceH5FontStyles;
+
+  display: inline-block;
+  width: auto;
+  min-height: auto;
+  height: 41px;
+  background-color: #ff790033;
+  color: var(--marketplaceColorDark);
+  border-radius: 18px;
+
+  float: right;
+  flex-shrink: 0;
+
+  margin: 19px 0 0 auto;
+  padding: 12px 16px 5px 16px;
+
+  @media (--viewportMedium) {
+    margin: 37px 0 0 auto;
+  }
+}
+
+.mati {
+
+  &>button {
+    width: 226px;
+    margin-top: 146px;
+  }
+
+  &>p {
+    margin: 0 0 10px 0;
+    color: var(--matterColorDark);
+  }
+
+  & .verifyStatus {
+    display: flex;
+    align-items: center;
+
+    &>svg {
+      margin-right: 6px;
+      width: 14px;
+    }
+  }
+}
+
+.mobile {
+  background-image: linear-gradient(to right, #080808, #14213d);
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  align-self: center !important;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobileText {
+  color: white;
+  font: normal normal bold 28px/38px Nunito;
+}
+
+.verifingMsg {
+  color: var(--matterColorDark);
+}
+.verificationButton {
+  padding: 10px;
+}
+
+
+
+.verificationCode {
+  max-width: 300px;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.controlLabel {
+  display: block;
+  margin: 30px 0;
+  font-weight: 600;
+  font-size: 26px;
+  color: #000;
+}
+
+.verificationCodeInputs input[type=text] {
+  border: 2px solid #555;
+  width: 100%;
+  padding: 10px;
+  letter-spacing: 28px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  margin: 0 auto;
+}
+
+.numberBoxMainWrap {
+  margin-top: 10px;
+
+  & .inputNumberBox {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    height: 45px !important;
+    padding: 0 0 0 16px;
+    background: #efefef 0% 0% no-repeat padding-box;
+    border: 1px solid var(--matterBorderColor);
+    box-shadow: 0px 1px 2px rgb(50 50 71 / 8%), 0px 0px 1px rgb(50 50 71 / 20%);
+
+    & input {
+      border-bottom: none;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 15px;
+      color: var(--matterColorDark);
+      padding: 0;
+      border-left: 1px solid #d4d4d4 !important;
+      margin-left: 9px;
+      padding-left: 16px;
+      border: none;
+      border-radius: 0;
+
+      &:-webkit-autofill {
+        background-color: white !important;
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+      }
+    }
+  }
+
+  & .inputBox {
+    &:nth-child(2) {
+      width: 100%;
+
+      & label {
+        margin-left: -100px;
+      }
+    }
+
+    & input {
+      background-color: white !important;
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
+
+    & input {
+      border-radius: 0 6px 6px 0;
+      border: 1px solid var(--matterBorderColor);
+      border-left: 0;
+      height: 50px !important;
+    }
+  }
+}
+
+.verifyOtpButton {
+  margin-top: 20px;
+  text-align: center;
+
+  & button {
+    background-color: var(--marketplaceColorDark);
+    color: var(--matterColorLight);
+    border: 1px solid var(--marketplaceColorDark);
+    font-size: 18px;
+    width: fit-content;
+    padding: 10px 50px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: auto;
+
+
+    &:hover {
+      background-color: #d8741a;
+      color: var(--matterColorLight);
+      border-color: #d8741a;
+    }
+  }
+}

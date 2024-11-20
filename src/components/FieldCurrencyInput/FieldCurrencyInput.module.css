@@ -1,0 +1,11 @@
+.input {
+  border: solid 1px var(--matterBorderColor);
+}
+
+.inputSuccess {
+  border-color: var(--successColor);
+}
+
+.inputError {
+  border-color: var(--failColor);
+}

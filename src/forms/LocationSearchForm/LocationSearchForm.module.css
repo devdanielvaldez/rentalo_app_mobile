@@ -1,0 +1,112 @@
+.root {
+  border-radius: 2px;
+}
+
+.searchInputIcon {
+  box-sizing: content-box;
+  padding-left: 24px;
+  margin-top: 2px;
+
+  display: flex;
+  width: 24px;
+  align-self: stretch;
+  border-bottom: 2px solid var(--marketplaceColor);
+  background-color: var(--matterColorLight);
+}
+
+.searchInput {
+  flex-grow: 1;
+  height: 69px;
+  padding-left: 10px;
+  margin: 0;
+  line-height: unset;
+  border-bottom-width: 2px;
+
+  /* Safari bugfix: without this Safari will print placeholder to a wrong place */
+  &::-webkit-input-placeholder {
+    line-height: normal;
+  }
+
+  &:hover,
+  &:focus {
+    border-bottom-color: var(--marketplaceColor);
+    outline: none;
+  }
+
+  &:hover::placeholder,
+  &:focus::placeholder {
+    color: var(--matterColor);
+  }
+
+  &::placeholder {
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    font-weight: var(--fontWeightRegular);
+    transition: var(--transitionStyleButton);
+  }
+}
+
+.searchPredictions {
+  position: absolute;
+  width: 100%;
+  padding-bottom: var(--locationAutocompleteBottomPadding);
+  top: 50px;
+  left: 0;
+  background-color: var(--marketplaceColor);
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+  box-shadow: var(--boxShadowPopup);
+  z-index: calc(var(--zIndexPopup) + 1);
+
+  margin-top: 16px;
+  margin-bottom: 102px;
+
+  @media (--viewportXLarge) {
+    margin-bottom: 0;
+  }
+}
+
+.noResultSearch {
+  & .searchInput {
+    border: solid 1px var(--matterBorderColor);
+    border-radius: 10px;
+    padding: 0px 20px;
+    height: 60px;
+    transition: all ease 0.5s;
+    background-color: var(--matterColorLight);
+
+    &:hover {
+      transition: all ease 0.5s;
+      border: solid 1px var(--matterColorAnti);
+    }
+  }
+
+  & .searchPredictions {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    text-align: left;
+    background-color: var(--marketplaceColor);
+    border-bottom-left-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+    box-shadow: var(--boxShadowPopup);
+    z-index: calc(var(--zIndexPopup) + 1);
+
+    margin-top: 16px;
+    margin-bottom: 102px;
+
+    @media (--viewportXLarge) {
+      margin-bottom: 0;
+    }
+
+    & ul {
+      & li {
+        font: normal normal normal 16px/24px Nunito;
+        letter-spacing: 0px;
+        color: var(--matterColorLight);
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+/**
+* Shows how you can use CSS to style your Element's container.
+* These classes are added to your Stripe Element by default.
+* You can override these classNames by using the options passed
+* to the CardElement component.
+* https://stripe.com/docs/js/elements_object/create_element?type=card#elements_create-options-classes
+*/
+.StripeElement {
+  height: 50px;
+  padding: 12px 16px;
+  width: 100%;
+  color: var(--matterColorDark);
+  border: solid 1px var(--matterBorderColor);
+  transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  border-radius: 5px;
+
+  &:hover {
+    border-color: var(--matterColorAnti);
+  }
+}
+
+.StripeElement--focus {
+  /* box-shadow: 0 1px 3px 0 #cfd7df; */
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.radioBoxWrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px 0 40px 0;
+  flex-direction: row-reverse;
+  cursor: pointer;
+
+  &>label {
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+
+  &>input {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+  }
+}
+
+.textInputRow {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.submitBtn {
+  border-radius: 10px;
+}

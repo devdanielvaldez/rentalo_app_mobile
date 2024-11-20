@@ -1,0 +1,39 @@
+@import '../../styles/customMediaQueries.css';
+@import '../../styles/propertySets.css';
+
+.layoutWrapperMain {
+  min-height: calc(100vh - var(--topbarHeight));
+
+  @media (--viewportMedium) {
+    min-height: calc(100vh - var(--topbarHeightDesktop));
+  }
+}
+
+.root {
+  width: calc(100% - 158px);
+  margin: 0px 158px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+
+  @media (--viewportMedium) {
+    padding-top: var(--topbarHeight);
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.content {}
+
+.error {
+  @apply --marketplaceModalErrorStyles;
+}
+
+
+@media (max-width: 767px) {
+  .sideNav {
+    display: none;
+  }
+}

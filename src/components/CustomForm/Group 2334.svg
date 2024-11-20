@@ -1,0 +1,16 @@
+<svg id="Group_2334" data-name="Group 2334" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="191.488" height="192.339" viewBox="0 0 191.488 192.339">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.466" x2="0.97" y2="0.684" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#45b986"/>
+      <stop offset="1" stop-color="#329a4d"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_4" data-name="Group 4" transform="translate(0 0)">
+    <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="95.744" cy="96.17" rx="95.744" ry="96.17" transform="translate(0)" fill="rgba(66,180,124,0.09)"/>
+    <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="75.235" cy="75.661" rx="75.235" ry="75.661" transform="translate(20.822 20.509)" fill="rgba(65,179,123,0.21)"/>
+    <g id="Component_13_2" data-name="Component 13 – 2" transform="translate(42.031 43.005)">
+      <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="54.028" cy="53.165" rx="54.028" ry="53.165" fill="url(#linear-gradient)"/>
+      <path id="Icon_feather-check" data-name="Icon feather-check" d="M45.3,9,18.28,36.017,6,23.736" transform="translate(28.461 30.77)" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5"/>
+    </g>
+  </g>
+</svg>

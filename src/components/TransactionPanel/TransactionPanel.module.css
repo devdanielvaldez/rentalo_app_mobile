@@ -1,0 +1,972 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  position: relative;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0px 0px 110px;
+
+  @media (--viewportMedium) {
+    padding: 30px 24px 110px;
+  }
+
+  @media (--viewportLarge) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 0px;
+    max-width: 94%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 80%;
+  }
+
+  @media (--viewportXLarge) {
+    max-width: 60%;
+  }
+}
+
+.txInfo {
+  width: 100%;
+  padding: 0 24px;
+
+  @media (--viewportMedium) {
+    padding: 0;
+  }
+
+  @media (--viewportLarge) {
+    padding: 0 50px 0 0;
+    width: 60%;
+  }
+}
+
+.genericError {
+  color: var(--failColor);
+  margin: 24px 24px 0 24px;
+
+  @media (--viewportMedium) {
+    margin: 32px 24px 0 24px;
+  }
+
+  @media (--viewportLarge) {
+    margin: 32px 0 0 0;
+  }
+}
+
+/* DetailCardImage subcomponent */
+.detailCardImageWrapper {
+  /* Layout */
+  display: none;
+  margin-left: -30px;
+  margin-right: -30px;
+  position: relative;
+
+  @media (--viewportLarge) {
+    display: block;
+    max-height: 268px;
+    overflow-y: hidden;
+  }
+}
+
+/* Firefox doesn't support image aspect ratio inside flexbox */
+.aspectWrapper {
+  padding-bottom: 66.6667%;
+  /* 3:2 Aspect Ratio */
+  background-color: var(--matterColorNegative);
+  /* Loading BG color */
+}
+
+.rootForImage {
+  /* Layout - image will take space defined by aspect ratio wrapper */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  @media (--viewportLarge) {
+    border-radius: 2px 2px 0 0;
+  }
+}
+
+.avatarWrapper {
+  /* Position (over the listing image)*/
+  margin-top: -30px;
+
+  /* Rendering context to the same lavel as listing image */
+  position: relative;
+  /* Flex would give too much width by default. */
+  width: 60px;
+
+  @media (--viewportMedium) {
+    margin-top: -32px;
+    padding: 2px 0;
+  }
+
+  @media (--viewportLarge) {
+    width: unset;
+    padding: 2px 0;
+  }
+}
+
+/* Passed-in props for DetailCardImage subcomponent */
+.imageWrapperMobile {
+  position: relative;
+  margin-left: -24px;
+  margin-right: -24px;
+
+  @media (--viewportLarge) {
+    display: none;
+  }
+}
+
+.avatarWrapperMobile {
+  composes: avatarWrapper;
+
+  @media (--viewportLarge) {
+    display: none;
+  }
+}
+
+.avatarWrapperDesktop {
+  composes: avatarWrapper;
+  display: none;
+
+  @media (--viewportLarge) {
+    display: block;
+  }
+}
+
+.avatarWrapperProviderDesktop {
+  display: none;
+
+  @media (--viewportLarge) {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.avatarDesktop {
+  @media (--viewportLarge) {
+    display: flex;
+  }
+}
+
+/* PanelHeadings subcomponent */
+.heading {
+  margin: 30px 0 0px 0;
+  font: normal normal 600 24px/35px Poppins;
+
+  @media (--viewportLarge) {
+    margin: 0 0 30px 0;
+  }
+
+  & .title {
+    font: normal normal 600 24px/35px Poppins;
+    color: var(--matterColorDark);
+    margin: 0 0 0px 0;
+
+    & > span {
+      color: var(--matterColorDark);
+
+      & > span {
+        color: var(--marketplaceColor);
+      }
+    }
+  }
+
+  & .author {
+    font: normal normal 400 16px/20px Nunito;
+    color: var(--matterColor);
+    margin: 0 0 0px 0;
+  }
+}
+
+.mainTitle {
+  display: block;
+}
+
+.transactionInfoMessage {
+}
+
+/* Container for booking details in mobile layout */
+.bookingDetailsMobile {
+  margin-top: 10px;
+
+  @media (--viewportMedium) {
+    margin-top: 10px;
+    padding: 4px 0 0px 0;
+  }
+
+  @media (--viewportLarge) {
+    display: none;
+  }
+}
+
+/* "aside" section in desktop layout */
+.asideDesktop {
+  width: 100%;
+  padding: 0px 24px;
+
+  @media (--viewportMedium) {
+    padding: 0px;
+  }
+
+  @media (--viewportLarge) {
+    width: 40%;
+  }
+}
+
+.detailCard {
+  @media (--viewportLarge) {
+    position: sticky;
+    top: -200px;
+    /* This is a hack to showcase how the component would look when the image isn't sticky */
+    background-color: var(--matterColorLight);
+    border: 1px solid var(--matterColorNegative);
+    border-radius: 2px;
+    z-index: 1;
+    padding: 0 30px 30px 30px;
+  }
+}
+
+/* DetailCardHeadingsMaybe subcomponent */
+.detailCardHeadings {
+  display: none;
+
+  @media (--viewportLarge) {
+    display: block;
+  }
+}
+
+.detailCardTitle {
+  margin: 20px 0 10px;
+  font: normal normal 800 20px/20px Nunito;
+  color: var(--matterColorDark);
+}
+
+.detailCardSubtitle {
+  @apply --marketplaceH5FontStyles;
+
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportLarge) {
+    margin-top: 9px;
+    margin-bottom: 0;
+  }
+}
+
+/* AddressLinkMaybe subcomponent */
+.address {
+  @apply --marketplaceH5FontStyles;
+  color: var(--matterColorAnti);
+  margin: 10px 0 0 0;
+}
+
+/* Passed-in props for AddressLinkMaybe subcomponent */
+.addressMobile {
+  @apply --marketplaceH5FontStyles;
+  color: var(--matterColorAnti);
+  margin: 0 0px 24px 0px;
+}
+
+/* BreakdownMaybe subcomponent */
+.breakdownMaybe {
+  /* default "root" class for breakdown container */
+}
+
+.bookingBreakdownTitle {
+  /* Font */
+  color: var(--matterColorAnti);
+
+  margin: 0;
+
+  @media (--viewportLarge) {
+    padding: 4px 0 4px 0;
+  }
+}
+
+.breakdown {
+  margin: 0;
+
+  @media (--viewportLarge) {
+    padding: 6px 0 2px 0;
+  }
+}
+
+.breakdownContainer {
+  display: none;
+
+  @media (--viewportLarge) {
+    display: block;
+  }
+}
+
+/* FeedSection subcomponent */
+.feedHeading {
+  font: normal normal 700 17px/20px Nunito;
+  color: var(--matterColorDark);
+  margin: 0 0 25px 0;
+}
+
+.feed {
+  margin-top: 20px;
+}
+
+.messageError {
+  color: var(--failColor);
+  margin: 13px 0 22px 0;
+
+  @media (--viewportMedium) {
+    margin: 13px 0 23px 0;
+  }
+
+  @media (--viewportLarge) {
+    margin: 12px 0 23px 0;
+  }
+}
+
+/* Passed-in props for FeedSection subcomponent */
+.feedContainer {
+  margin: 46px 0px 20px 0px;
+  max-height: 750px;
+  overflow-y: auto;
+
+  @media (--viewportMedium) {
+    margin: 40px 0px 20px 0px;
+  }
+
+  @media (--viewportLarge) {
+    margin: 43px 0 20px 0;
+  }
+}
+
+/* Prop to be passed to SendMessageForm component */
+.sendMessageForm {
+  position: relative;
+  margin: 46px 0px 0 0px;
+
+  @media (--viewportLarge) {
+    margin: 47px 0 0 0;
+  }
+
+  & > div {
+    & > textarea {
+      padding: 20px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      height: 100px !important;
+      background-color: var(--matterColorLight);
+    }
+  }
+}
+
+.sendingMessageNotAllowed {
+  color: var(--matterColorAnti);
+
+  position: relative;
+  margin: 46px 24px 0 24px;
+
+  @media (--viewportMedium) {
+    margin: 49px 24px 0 24px;
+    border-top: 0;
+  }
+
+  @media (--viewportLarge) {
+    margin: 47px 0 0 0;
+  }
+}
+
+/* SaleActionButtonsMaybe subcomponent */
+.actionButtons {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  padding: 18px 24px;
+  left: 0;
+  background-color: white;
+  box-shadow: var(--boxShadowTop);
+
+  /* 3D painting container helps scrolling */
+  transform: translate3d(0, 0, 0);
+
+  @media (--viewportMedium) {
+    padding: 18px 24px 18px 180px;
+  }
+
+  @media (--viewportLarge) {
+    z-index: unset;
+    position: static;
+    box-shadow: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.actionButtonWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  @media (--viewportLarge) {
+    flex-direction: column;
+  }
+
+  & button:first-child {
+    margin: 0 12px 0 0;
+
+    @media (--viewportLarge) {
+      margin: 8px 0 0 0;
+
+      /* Switch order in desktop layout with accept button being on the top */
+      order: 1;
+    }
+  }
+}
+
+.actionError {
+  @apply --marketplaceH5FontStyles;
+  color: var(--failColor);
+  margin: 0 0 11px 0;
+
+  @media (--viewportMedium) {
+    margin: 0 0 10px 0;
+  }
+
+  @media (--viewportLarge) {
+    margin: 0;
+  }
+}
+
+.actionErrors {
+  width: 100%;
+  text-align: center;
+
+  @media (--viewportLarge) {
+    position: absolute;
+    top: 151px;
+  }
+}
+
+.mobileActionButtons {
+  display: block;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: white;
+
+  @media (--viewportLarge) {
+    display: none;
+  }
+}
+
+.desktopActionButtons {
+  display: none;
+
+  @media (--viewportLarge) {
+    display: block;
+  }
+}
+
+/* BookingPanel subcompnent */
+.bookingPanel {
+  margin: 16px 48px 48px 48px;
+}
+
+.bookingTitle {
+  /* Font */
+  color: var(--matterColor);
+
+  margin-top: 0;
+  margin-bottom: 1px;
+}
+
+.cancelButton {
+  background-color: rgb(245, 245, 245);
+  border-radius: 10px;
+  margin: auto;
+  border: 1px solid grey;
+  padding: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+.cancelButtonDisabled {
+  pointer-events: none;
+  background-color: rgb(233, 233, 233);
+  color: grey;
+  border-radius: 10px;
+  margin: auto;
+  border: 1px solid grey;
+  padding: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.cancelButton:hover {
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  border: 1px solid grey;
+}
+
+.submitContainer {
+  align-items: center;
+  text-align: center;
+}
+
+.signButton {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.fileUploadWrapper {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.carPhoto {
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.carInitialPhoto {
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.hidePhoto {
+  display: none;
+}
+
+.sendContractWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.sendContractTextWrapper {
+  line-height: 22px;
+  color: var(--successColor);
+  margin-bottom: 20px;
+}
+
+.sendContractButton {
+  background-color: var(--successColor);
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  min-height: 50px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: var(--matterColorDark);
+  }
+}
+
+.sendContractButtonDisabled {
+  background-color: rgb(183, 183, 183);
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  min-height: 50px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.uploadPhotoWrapper {
+  margin: 0 24px 0 24px;
+
+  @media (--viewportMedium) {
+    margin: 0 24px 0 24px;
+  }
+
+  @media (--viewportLarge) {
+    margin: 0 48px 0 48px;
+    padding: 0 0 2px 0;
+  }
+}
+
+.uploadPhotoLabel {
+  line-height: 22px;
+  margin-bottom: 10px;
+  color: var(--marketplaceColorLight);
+}
+
+.uploadPhotoUnderlabel {
+  line-height: 22px;
+  margin-top: 10px;
+  color: var(--marketplaceColorLight);
+}
+
+.uploadPictureButton {
+  text-align: center;
+  background-color: var(--successColor);
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 10px 0px;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.seePhotosWrapperCenter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.seePhotosWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+
+.seePhotosButton {
+  border: none;
+  background-color: var(--marketplaceColor);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 5px 10px;
+  width: 100%;
+  height: 50px;
+  margin: 20px 0 0 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+
+  @media (--viewportLarge) {
+    margin: 20px 0;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: var(--marketplaceColorDark);
+  }
+
+  & > svg {
+    width: 16px;
+    margin-left: 6px;
+  }
+}
+
+.signUrlBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  height: 100%;
+
+  & .closeUrl {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: var(--marketplaceColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+
+    & > svg {
+      width: 20px;
+      height: 20px;
+
+      & > path {
+        stroke: var(--matterColorLight);
+      }
+    }
+  }
+
+  & > object {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.verifySec {
+  margin: 20px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acceptContractBtn {
+  & > button {
+    &:first-child {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.verifybyProvider {
+  color: var(--matterColorDark);
+}
+
+.cancelTransactionModal {
+  text-align: center;
+
+  & > h2 {
+    margin: 20px 0 10px 0;
+    font: normal normal 800 20px/20px Nunito;
+    color: var(--matterColorDark);
+  }
+
+  & > p {
+    color: var(--matterColorAnti);
+    font: normal normal 400 16px/20px Nunito;
+    margin: 10px 0;
+  }
+
+  & .checkPrivacy {
+    color: var(--matterColorDark);
+    font: normal normal 400 16px/20px Nunito;
+    margin-bottom: 30px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  & .cancelTransBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > button {
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.insuranceCard {
+  background-color: #e4f7f9;
+  border: solid 2px #c5f3f9;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 100%;
+
+  & > p {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--matterColorDark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media (--viewportSmall) {
+      flex-direction: row;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & > span {
+      width: 100%;
+
+      @media (--viewportSmall) {
+        width: 50%;
+      }
+    }
+
+    & > strong {
+      width: 100%;
+
+      @media (--viewportSmall) {
+        width: 50%;
+      }
+    }
+  }
+}
+.bottomButon {
+  top: 50px;
+  position: relative;
+  z-index: 9;
+  & .buttonBox {
+    & a {
+      background: var(--matterColorDark) 0% 0% no-repeat padding-box;
+      border-radius: 100px;
+      border: solid 1px var(--matterColorDark);
+      font-size: 16px;
+      color: #ffffff;
+      opacity: 1;
+      cursor: pointer;
+      padding: 10px 20px;
+      line-height: 100%;
+      width: 100%;
+      display: block;
+      text-align: center;
+      &:hover {
+        text-decoration: none;
+        background-color: var(--marketplaceColorDark);
+        color: var(--matterColorLight);
+        border-color: var(--marketplaceColorDark);
+      }
+    }
+  }
+}
+.spinnerBox {
+  text-align: center;
+}
+.viewSign {
+  background: var(--matterColorDark) 0% 0% no-repeat padding-box;
+  border-radius: 100px;
+  border: solid 1px var(--matterColorDark);
+  font-size: 16px;
+  color: #ffffff;
+  opacity: 1;
+  cursor: pointer;
+  padding: 10px 20px;
+  line-height: 100%;
+  width: 100%;
+  display: block;
+  text-align: center;
+  &:hover {
+    text-decoration: none;
+    background-color: var(--marketplaceColorDark);
+    color: var(--matterColorLight);
+    border-color: var(--marketplaceColorDark);
+  }
+}
+.verificationButton {
+  padding: 10px;
+}
+
+.getUrlOne {
+  background: var(--matterColorDark) 0% 0% no-repeat padding-box;
+  border-radius: 100px;
+  border: solid 1px var(--matterColorDark);
+  font-size: 16px;
+  color: #ffffff;
+  opacity: 1;
+  cursor: pointer;
+  padding: 10px 20px;
+  line-height: 100%;
+  width: 100%;
+  display: block;
+  text-align: center;
+  &:hover {
+    text-decoration: none;
+    background-color: var(--marketplaceColorDark);
+    color: var(--matterColorLight);
+    border-color: var(--marketplaceColorDark);
+  }
+}
+.downloadPdfButton {
+  background-color: var(--marketplaceColor);
+  color: var(--matterColorLight);
+  border: none;
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  width: 100%;
+  border-radius: var(--borderRadius);
+  text-align: center;
+  text-decoration: none;
+  transition: all var(--transitionStyleButton);
+  cursor: pointer;
+  min-height: 50px;
+  margin-top: 20px;
+}
+
+.policyModalContent {
+  font-size: 14px;
+}
+
+.policyModalContentColsWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.policyModalContentCol {
+  padding-right: 10px;
+}
+
+.submitButton {
+  margin-top: auto;
+  margin-bottom: 0;
+  flex-shrink: 0;
+
+  @media (--viewportMedium) {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.providerComplete {
+  margin-top: 20px;
+}
+
+.disputeAmount {
+  margin: 20px 0;
+}

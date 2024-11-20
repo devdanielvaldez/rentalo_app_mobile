@@ -1,0 +1,21 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  font-size: 10px;
+  color: var(--matterColorLight);
+  text-align: center;
+  background-color: var(--marketplaceColorDark);
+  width: auto;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 0;
+  margin-top: 0;
+  line-height: 100%;
+  margin-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

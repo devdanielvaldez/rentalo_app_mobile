@@ -1,0 +1,515 @@
+@import "../../styles/propertySets.css";
+
+.root {
+  /* @apply --marketplaceModalFormRootStyles;
+
+  justify-content: flex-start;
+
+  @media (--viewportMedium) {
+    justify-content: space-between;
+  } */
+  margin: 0px 20px 20px 35px;
+
+  /* background-color: #ffffff; */
+  @media screen and (max-width: 1640px) {
+    margin: 0px 0px 20px 0px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 5px 0px;
+  }
+}
+
+
+
+.appleLogin{
+  position: relative;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  &>div{
+    height: 40px;
+    width: 100%;
+    &>div{
+      width: 100% !important;
+      min-width: 100% !important;
+    }
+  }
+}
+
+.mobile {
+  background-image: linear-gradient(to right, #080808, #14213d);
+  height: 86px;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  align-self: center !important;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.appleSignUp{
+  background-color: #000000;
+  color: #ffffff;
+  height: 52px;
+  /* width: 394px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid #dbdbdb;
+  border-radius: 28px;
+  width: 100%;
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding: 11px 15px;
+  @media(max-width:1920px){
+    max-width: 448px;
+    margin: 0 auto 30px;
+    border-radius: 50px;
+  }
+
+  & .appleLogo {
+      padding-right: 38px;
+      position: relative;
+  
+      &:after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 22px;
+        top: 1px;
+        right: 17px;
+        background-color: #ffffff;
+  
+      }
+  
+      & svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+
+.mobileText {
+  color: white;
+  font: normal normal bold 28px/38px Nunito;
+  letter-spacing: 0px;
+  color: #ffffff;
+}
+
+.pic {
+  width: 100%;
+  /* max-width: 860px; */
+  object-fit: contain;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.title1 {
+  margin: 0 0 10px;
+  font: normal normal bold 50px/71px Poppins;
+  letter-spacing: 0px;
+  color: #000000;
+
+  @media screen and (max-width: 1640px) {
+    font: normal normal bold 30px/41px Poppins;
+  }
+}
+
+.text1 {
+  font: normal normal normal 18px/22px Nunito;
+  letter-spacing: 0px;
+  color: #0000006e;
+
+  @media screen and (max-width: 1640px) {
+    font: normal normal normal 16px/18px Nunito;
+  }
+}
+
+.pTag {
+  margin-top: 0;
+  margin-bottom: 37px;
+
+  & strong {
+    color: #000000;
+  }
+
+  @media screen and (max-width: 1640px) {
+    font: normal normal normal 16px/22px Nunito;
+  }
+}
+
+.box1 {
+  /* background: #f5f5f5 0% 0% no-repeat padding-box; */
+  padding: 15px 20px 30px 20px;
+  /* margin-top: 4pc; */
+  border-radius: 10px;
+
+  @media screen and (max-width: 880px) {
+    display: none !important;
+  }
+}
+
+.rowWrapper {
+  display: flex;
+  gap: 58px;
+
+  @media screen and (min-width: 1921px) {
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 1023px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+  }
+
+  & .inputWrapper {
+    margin-top: 64px;
+
+    @media screen and (max-width: 1640px) {
+      max-width: 50%;
+    }
+
+    @media screen and (max-width: 1023px) {
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 1023px) {
+      margin-top: 0px;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+
+    & .text1 {
+      text-align: center;
+      font-size: 16px;
+      letter-spacing: 0px;
+      color: #000000;
+      margin-top: 36px;
+      font-weight: 600;
+    }
+  }
+}
+
+.google {
+  width: 28px;
+  height: 28px;
+}
+
+.border {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #dbdbdb;
+  border-radius: 28px;
+  width: 100%;
+
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding: 11px 0;
+
+  &>div {
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  @media (max-width: 1920px) {
+    max-width: 448px;
+    margin: 0 auto 30px;
+    border-radius: 50px;
+  }
+
+  & p {
+    font: normal normal bold 18px/24px Nunito;
+    letter-spacing: 0px;
+    color: #343131;
+    margin: 0 0 0 18px;
+    padding: 0 0 0 18px;
+    border-left: 1px solid #e8e8e8;
+  }
+
+  & svg {
+    margin-left: auto;
+    display: block;
+  }
+}
+
+.border:hover {
+  transform: scale(0.98);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  gap: 40px;
+}
+
+.box {
+  background: #f8f8f8 0% 0% no-repeat padding-box;
+  border-radius: 30px;
+  width: 100%;
+  /*
+  height: 100%;
+  max-height: 510px; */
+  padding: 5px 40px;
+
+  @media screen and (max-width: 1920px) {
+    max-width: 470px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 5px 22px;
+    max-height: 85%;
+    height: auto;
+  }
+}
+
+.text {
+  font: normal normal 500 16px/21px Roboto;
+  letter-spacing: 0px;
+  color: #000000;
+  text-align: center;
+  margin-top: 29px;
+  cursor: pointer;
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  @media (--viewportMedium) {
+    margin-top: 32px;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.firstNameRoot {
+  width: 48%;
+
+  & input {
+    background: #ebebeb 0% 0% no-repeat padding-box;
+    border-radius: 28px;
+    padding: 9px 13px 9px 20px;
+
+    @media screen and (max-width: 768px) {
+      padding: 13px 13px 13px 20px;
+    }
+
+    &::placeholder {
+      font: normal normal medium 15px/20px Roboto;
+      letter-spacing: 0px;
+      color: rgba(0, 0, 0, 0.25) !important;
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}
+
+.firstNameRoot>input {}
+
+.lastNameRoot {
+  width: 48%;
+
+  & input {
+    background: #ebebeb 0% 0% no-repeat padding-box;
+    border-radius: 28px;
+    padding: 9px 13px 9px 20px;
+
+    @media screen and (max-width: 768px) {
+      padding: 13px 13px 13px 20px;
+    }
+
+    &::placeholder {
+      font: normal normal medium 15px/20px Roboto;
+      letter-spacing: 0px;
+      color: rgba(0, 0, 0, 0.25) !important;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.lastNameRoot>input {}
+
+.email {
+  & input {
+    background: #ebebeb 0% 0% no-repeat padding-box;
+    border-radius: 28px;
+    padding: 9px 13px 9px 20px;
+
+    @media screen and (max-width: 768px) {
+      padding: 13px 13px 13px 20px;
+    }
+
+    &::placeholder {
+      font: normal normal medium 15px/20px Roboto;
+      letter-spacing: 0px;
+      color: rgba(0, 0, 0, 0.25) !important;
+    }
+  }
+
+  margin-bottom: 24px;
+}
+
+.email>input {}
+
+.password {
+
+  /* @apply --marketplaceModalPasswordMargins; */
+  & input {
+    background: #ebebeb 0% 0% no-repeat padding-box;
+    border-radius: 28px;
+    padding: 9px 13px 9px 20px;
+
+    @media screen and (max-width: 768px) {
+      padding: 13px 13px 13px 20px;
+    }
+
+    &::placeholder {
+      font: normal normal medium 15px/20px Roboto;
+      letter-spacing: 0px;
+      color: rgba(0, 0, 0, 0.25) !important;
+    }
+  }
+
+  margin-bottom: 24px;
+}
+
+.password>input {}
+
+.button {
+  background: #000000 0% 0% no-repeat padding-box;
+  border-radius: 28px;
+  min-height: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+
+  & label {
+    margin-bottom: 0;
+    font: normal normal medium 15px/20px Roboto;
+    letter-spacing: 0px;
+    color: #090909;
+  }
+}
+
+.form>input {
+  width: 30px;
+  height: 15px;
+}
+
+.formDetailsRight {
+  position: relative;
+
+  /* background: #F5F5F5 0% 0% no-repeat padding-box; */
+  @media screen and (min-width: 1921px) {
+    max-width: 60%;
+  }
+
+  @media screen and (max-width: 1640px) {
+    max-width: 50%;
+  }
+
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+
+  &>div {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -16%;
+    bottom: 0;
+    background: #f5f5f5;
+    transform: rotate(83deg);
+    height: 1400px;
+    width: 1400px;
+
+    @media screen and (max-width: 1640px) {
+      left: 8%;
+    }
+  }
+}
+
+.carBox {
+  width: 90px;
+  height: 80px;
+  /* UI Properties */
+  background: #302d2d05 0% 0% no-repeat padding-box;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 1300px) {
+    display: none;
+  }
+}
+
+.car {
+  width: 50px;
+  height: 50px;
+  opacity: 0.4;
+}
+
+.bottomWrapper {
+  @apply --marketplaceModalBottomWrapper;
+}
+
+.bottomWrapperText {
+  @apply --marketplaceModalBottomWrapperText;
+  text-align: center;
+}
+
+.termsText {
+  @apply --marketplaceModalHelperText;
+}
+
+.termsLink {
+  @apply --marketplaceModalHelperLink;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

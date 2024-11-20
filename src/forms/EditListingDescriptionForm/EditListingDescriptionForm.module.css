@@ -1,0 +1,322 @@
+.root {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: var(--failColor);
+}
+
+.formMargins {
+  margin-bottom: 24px;
+
+  @media (--viewportMedium) {
+    margin-bottom: 32px;
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  width: 100%;
+  /* align-items: center; */
+  margin-bottom: 20px;
+  background: #ffffff;
+  border: 1px dashed #d8d8d8;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.title {
+  color: #00000078;
+}
+
+.title>input {
+  background: #f3f3f3;
+  border-radius: 23px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+.description1>textarea {
+  background: #f3f3f3;
+  border-radius: 23px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+.description1 {
+  color: #00000078;
+  flex-shrink: 0;
+  margin: 8px 0px;
+  width: 98%;
+}
+
+.description2 {
+  color: #00000078;
+  margin: 8px 0px;
+  padding-right: 10px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.description2>input {
+  background: #f3f3f3;
+  border-radius: 23px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+.description3 {
+  color: #00000078;
+  margin: 8px 0px;
+}
+
+.description3>input {
+  background: #f3f3f3;
+  border-radius: 23px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+.description {
+  color: #00000078;
+  flex-shrink: 0;
+  margin: 8px 0px;
+  /* padding-right: 10px; */
+  width: 49%;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.description>input {
+  background: #f3f3f3;
+  border-radius: 23px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+.category {
+  composes: formMargins;
+  color: #00000078;
+}
+
+.category>select {
+  color: #00000078;
+  background: #f3f3f3;
+  border-radius: 23px;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+.verifytButton {
+  flex-shrink: 0;
+  background: var(--marketplaceColor);
+  border-radius: 10px;
+
+  @media (--viewportLarge) {
+    display: inline-block;
+    max-width: 241px;
+  }
+
+  @hover {
+    transform: scale(1.05);
+  }
+
+}
+
+.submitButton {
+  margin-top: 50px;
+  flex-shrink: 0;
+  background: var(--marketplaceColor);
+  border-radius: 10px;
+
+  @media (--viewportLarge) {
+    display: inline-block;
+    max-width: 241px;
+    margin-top: 100px;
+  }
+
+  @hover {
+    transform: scale(1.05);
+  }
+
+}
+
+.box1 {
+  background: #f8f8f8;
+  border: 1px solid #ececec;
+  border-radius: 0px 0px 10px 10px;
+  opacity: 1;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.inputLabel {
+  margin-bottom: 0;
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 14px;
+  color: #00000078;
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.inputLabel12 {
+  margin-bottom: 0;
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 14px;
+  color: #00000078;
+  display: flex;
+  flex-direction: column;
+}
+
+.customInput {
+  border-bottom-color: var(--successColor);
+  margin-bottom: 1pc;
+  background: #f3f3f3;
+  border-radius: 23px;
+  padding-left: 10px;
+}
+
+.customInputEmpty {
+  margin-bottom: 1pc;
+  background: #f3f3f3;
+  border-radius: 23px;
+  padding-left: 10px;
+}
+
+.disabledInput {
+  background: #efefef;
+  border-radius: 7px;
+  padding-left: 10px;
+}
+
+.inputLabel1 {
+  margin-bottom: 0;
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 14px;
+  color: #00000078;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  padding-right: 10px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.inputLabel2 {
+  margin-bottom: 0;
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 14px;
+  color: #00000078;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.customInput1 {
+  border-bottom-color: var(--successColor);
+  background: #efefef;
+  border-radius: 7px;
+  padding-left: 10px;
+}
+
+.customInputEmpty1 {
+  background: #efefef;
+  border-radius: 7px;
+  padding-left: 10px;
+}
+
+.custom>select {
+  background: #efefef !important;
+}
+
+.row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.row2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.rowBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-direction: column;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+
+  & .inputBox {
+    width: 100%;
+    margin-bottom: 30px;
+
+    @media (--viewportMedium) {
+      width: calc(50% - 10px);
+      margin-bottom: 0px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & input {
+      background: #f3f3f3;
+      border-radius: 10px;
+      padding: 13px 16px;
+      height: 56px;
+    }
+
+    & label {
+      font: normal normal normal 16px/24px Nunito;
+      letter-spacing: 0px;
+      color: var(--matterColorDark);
+    }
+  }
+}
+
+.errorMessage {
+  margin: 10px 0 0;
+  font: normal normal normal 16px/24px Nunito;
+  letter-spacing: 0px;
+  color: var(--failColor);
+}

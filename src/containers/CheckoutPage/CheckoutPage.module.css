@@ -1,0 +1,582 @@
+@import '../../styles/customMediaQueries.css';
+@import '../../styles/propertySets.css';
+
+/* Dummy Topbar */
+
+.topbar {
+  /* Size */
+  width: 100%;
+  height: var(--topbarHeight);
+
+  /* Layout for child components */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* fill */
+  background-color: var(--matterColorLight);
+
+  /* shadows */
+  box-shadow: var(--boxShadow);
+
+  @media (--viewportLarge) {
+    height: var(--topbarHeightDesktop);
+    justify-content: center;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.card {
+  margin-top: 0;
+}
+
+.input {
+  display: flex;
+  flex-direction: row;
+  /* padding: 5px; */
+}
+
+.home {
+  display: flex;
+  padding: calc((var(--topbarHeight) - var(--CheckoutPage_logoHeight)) / 2) 24px;
+
+  @media (--viewportLarge) {
+    padding: calc((var(--topbarHeightDesktop) - var(--CheckoutPage_logoHeightDesktop)) / 2) 36px;
+  }
+}
+
+.logoMobile {
+  display: block;
+
+  & path {
+    fill: var(--marketplaceColor);
+  }
+
+  @media (--viewportLarge) {
+    display: none;
+  }
+}
+
+.logoDesktop {
+  display: none;
+  width: auto;
+  height: 27px;
+
+  @media (--viewportLarge) {
+    display: block;
+  }
+}
+
+/* /Dummy Topbar */
+
+/**
+ * Content: mobile flow vs desktop 2 columns
+ * desktop has reduced version of bookListingContainer (incl. title and Stripe paymentForm).
+ * priceBreakdown is inside separate column (detailsContainerDesktop)
+ */
+.contentContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0px;
+
+  @media (--viewportLarge) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 24px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  @media (min-width:1280px) {
+    max-width: 80%;
+  }
+
+  @media (--viewportXLarge) {
+    max-width: 60%;
+  }
+}
+
+.leftSection {
+  width: 100%;
+
+  @media (--viewportLarge) {
+    width: 60%;
+    padding-right: 50px;
+  }
+}
+
+.rightSection {
+  width: 100%;
+
+  @media (--viewportLarge) {
+    width: 40%;
+  }
+}
+
+.bookListingContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 24px;
+
+  @media (--viewportLarge) {
+    padding: 0;
+  }
+}
+
+.aspectWrapper {
+  position: relative;
+  padding-bottom: 66.6667%;
+  /* 3:2 Aspect Ratio */
+  background-color: var(--matterColorNegative);
+  /* Loading BG color */
+
+  @media (--viewportLarge) {
+    display: none;
+  }
+}
+
+.rootForImage {
+  /* Layout - image will take space defined by aspect ratio wrapper */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  @media (--viewportLarge) {
+    border-radius: 2px 2px 0 0;
+  }
+}
+
+.avatarWrapper {
+  /* Position (over the listing image)*/
+  margin-left: 24px;
+  margin-top: -31px;
+
+  /* Rendering context to the same lavel as listing image */
+  position: relative;
+
+  /* Layout */
+  display: block;
+
+  @media (--viewportLarge) {
+    margin-left: 48px;
+  }
+}
+
+.avatarMobile {
+  @media (--viewportLarge) {
+    display: none;
+  }
+}
+
+.heading {
+  margin: 0 0 30px 0;
+
+  & .title {
+    font: normal normal 600 30px/40px Poppins;
+    color: var(--matterColorDark);
+    margin: 0 0 0px 0;
+  }
+
+  & .author {
+    font: normal normal 400 16px/20px Nunito;
+    color: var(--matterColor);
+    margin: 0 0 0px 0;
+  }
+}
+
+.priceBreakdownContainer {
+  padding: 0 24px;
+  margin-bottom: 37px;
+
+  @media (--viewportMedium) {
+    margin-bottom: 38px;
+  }
+
+  @media (--viewportLarge) {
+    /* we don't show price breakdown since it will be visible within 2nd column (detailsContainerDesktop) */
+    display: none;
+  }
+}
+
+.priceBreakdownTitle {
+  /* Font */
+  color: var(--matterColorAnti);
+
+  margin-top: 0;
+  margin-bottom: 14px;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 18px;
+  }
+
+  @media (--viewportLarge) {
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+}
+
+.paymentContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 35px;
+
+  @media (--viewportLarge) {
+    padding: 0;
+  }
+}
+
+.orderError,
+.notFoundError {
+  margin: 11px 0 12px 0;
+
+  @media (--viewportMedium) {
+    margin: 10px 0 12px 0;
+  }
+}
+
+.orderError {
+  color: var(--failColor);
+}
+
+.notFoundError {
+  color: var(--attentionColor);
+}
+
+.speculateError {
+  color: var(--failColor);
+  margin: 19px 0 1px 0;
+
+  @media (--viewportLarge) {
+    margin: 28px 48px 0 48px;
+  }
+}
+
+.paymentForm {
+  flex-grow: 1;
+}
+
+/* Details column is visible only on desktop */
+.detailsContainerDesktop {
+  display: none;
+  width: 100%;
+
+  @media (--viewportLarge) {
+    flex-shrink: 0;
+    display: block;
+    /* Dimensions */
+    padding-bottom: 55px;
+    /* Coloring */
+    background-color: var(--matterColorLight);
+    border: 1px solid var(--matterColorNegative);
+    border-radius: 2px;
+  }
+}
+
+.detailsAspectWrapper {
+  position: relative;
+  padding-bottom: 66.6667%;
+  /* 3:2 Aspect Ratio */
+  background-color: var(--matterColorNegative);
+  /* Loading BG color */
+}
+
+.detailsHeadings {
+  display: none;
+
+  @media (--viewportLarge) {
+    display: block;
+    margin: 0 48px;
+  }
+}
+
+.detailsTitle {
+  margin: 20px 0 10px;
+  font: normal normal 800 20px/20px Nunito;
+  color: var(--matterColorDark);
+}
+
+.detailsSubtitle {
+  @apply --marketplaceH5FontStyles;
+
+  /* Reset margins from font styles */
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportLarge) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.bookingBreakdownTitle {
+  /* Font */
+  color: var(--matterColorAnti);
+
+  /* Layout spacing */
+  margin: 5px 24px 25px 24px;
+
+  @media (--viewportLarge) {
+    margin: 37px 48px 26px 48px;
+  }
+}
+
+.bookingBreakdown {
+  @media (--viewportLarge) {
+    margin: 0 48px;
+  }
+}
+
+.lineItemHours {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--fontFamily);
+  font-weight: var(--fontWeightMedium);
+  font-size: 14px;
+  line-height: 24px;
+  color: #333;
+}
+
+.lineItemTotal {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e7e7e7;
+}
+
+.lineItemInfo {
+  font-family: var(--fontFamily);
+  font-weight: var(--fontWeightMedium);
+  font-size: 14px;
+  line-height: 24px;
+  color: #333;
+}
+
+.breakdownWrapper {
+  padding: 0 2pc;
+}
+
+/* BOOKING BREAKDOWN CSS */
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.lineItem {
+  @apply --marketplaceH4FontStyles;
+  margin: 0;
+
+  @media (--viewportMedium) {
+    padding-top: 6px;
+    padding-bottom: 2px;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bookingPeriod {
+  flex: 1 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 6px;
+
+  @media (--viewportMedium) {
+    padding-bottom: 8px;
+  }
+}
+
+.bookingPeriodSectionRigth {
+  text-align: right;
+}
+
+.dayLabel {
+  @apply --marketplaceH5FontStyles;
+  margin: 0;
+  color: var(--matterColorAnti);
+  line-height: 24px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+
+  @media (--viewportMedium) {
+    padding-top: 1px;
+    padding-bottom: 7px;
+  }
+}
+
+.dayInfo {
+  @apply --marketplaceButtonFontStyles;
+}
+
+.subTotalLineItem {
+  @apply --marketplaceH4FontStyles;
+  font-weight: var(--fontWeightBold);
+  margin: 0;
+  padding: 5px 0 1px 0;
+
+  @media (--viewportMedium) {
+    padding: 6px 0 2px 0;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.lineItemTotal {
+  @apply --marketplaceH4FontStyles;
+  margin: 0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  @media (--viewportMedium) {
+    padding-bottom: 2px;
+  }
+}
+
+.itemLabel {
+  @apply --marketplaceSmallFontStyles;
+  flex: 1;
+}
+
+.itemValue {
+  @apply --marketplaceSmallFontStyles;
+  margin: 0 0 0 10px;
+}
+
+.totalDivider {
+  /* dimensions */
+  width: 100%;
+  height: 1px;
+  margin: 12px 0 5px 0;
+
+  border: none;
+  background-color: var(--matterColorNegative);
+
+  @media (--viewportMedium) {
+    margin: 7px 0 0px 0;
+  }
+}
+
+.totalLabel {
+  @apply --marketplaceSmallFontStyles;
+}
+
+.totalPrice {
+  @apply --marketplaceButtonFontStyles;
+  margin: 0 0 0 10px;
+  padding-top: 0px;
+}
+
+.feeInfo {
+  @apply --marketplaceTinyFontStyles;
+  flex-shrink: 0;
+  margin: 0;
+  color: var(--matterColorAnti);
+  padding-top: 4px;
+  padding-bottom: 14px;
+
+  @media (--viewportMedium) {
+    padding-top: 11px;
+    padding-bottom: 21px;
+  }
+}
+
+.useSavedCard {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font: normal normal 700 17px/20px Nunito;
+  color: var(--matterColorDark);
+  margin: 0 0 25px 0;
+
+  &>img {
+    width: 28px;
+    margin-left: 10px;
+  }
+}
+
+.message {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 100%;
+
+  &>label {
+    font: normal normal 400 14px/20px Nunito;
+    color: var(--matterColorDark);
+  }
+
+  &>textarea {
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 100px !important;
+  }
+}
+
+.checkoutForm {
+  &>h3 {
+    font: normal normal 700 17px/20px Nunito;
+    color: var(--matterColorDark);
+    margin: 0 0 25px 0;
+  }
+}
+
+.submitBtn {
+  border-radius: 10px;
+}
+
+.loading {
+  padding: 24px;
+
+  @media (--viewportLarge) {
+    padding: 0;
+  }
+}
+
+.flightInfo {
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 100%;
+
+  &>h1 {
+    font: normal normal 600 20px/26px Poppins;
+    color: var(--matterColorDark);
+    margin: 0 0 30px 0;
+  }
+
+  & .rowFld {
+    margin: 0 0 20px 0;
+
+    &>label {
+      font: normal normal 400 14px/20px Nunito;
+      color: var(--matterColorDark);
+    }
+  }
+}

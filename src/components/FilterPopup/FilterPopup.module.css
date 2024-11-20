@@ -1,0 +1,108 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  position: relative;
+  display: inline-block;
+}
+
+.label {
+  background-color: var(--matterColorLight);
+  border: 1px solid #E6E6E6;
+  border-radius: 5px;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  cursor: pointer;
+  letter-spacing: 0px;
+  color: #A7A7A7;
+  font: normal normal normal 14px/18px Nunito;
+  padding: 8px 16px;
+
+  @media (--viewportLarge) {
+    padding: 10px 20px;
+    font: normal normal normal 16px/22px Nunito;
+  }
+
+  &:focus,
+  &:hover {
+    outline: none;
+    background-color: var(--matterColorLight);
+    border: 1px solid #E6E6E6;
+    text-decoration: none;
+    box-shadow: var(--boxShadowFilterButton);
+    font: normal normal normal 14px/18px Nunito;
+    padding: 8px 16px;
+
+    @media (--viewportLarge) {
+      padding: 10px 20px;
+      font: normal normal normal 16px/22px Nunito;
+    }
+  }
+}
+
+.labelSelected {
+  outline: none;
+  background-color: var(--matterColorDark);
+  border-color: transparent;
+  text-decoration: none;
+  box-shadow: var(--boxShadowFilterButton);
+  border: 1px solid var(--marketplaceColor);
+  letter-spacing: 0px;
+  background-color: var(--matterColorDark);
+  color: var(--matterColorLight);
+  border-radius: 5px;
+  font: normal normal normal 14px/18px Nunito;
+  padding: 8px 16px;
+
+  @media (--viewportLarge) {
+    padding: 10px 20px;
+    font: normal normal normal 16px/22px Nunito;
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid var(--matterColorDark);
+    background-color: var(--matterColorDark);
+    color: var(--matterColorLight);
+  }
+}
+
+.labelEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.popup {
+  /* By default hide the content */
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  /* Position */
+  position: absolute;
+  z-index: var(--zIndexPopup);
+
+  /* Layout */
+  min-width: 300px;
+  margin-top: 7px;
+  background-color: var(--matterColorLight);
+
+  /* Borders */
+  border-top: 1px solid var(--matterColorNegative);
+  box-shadow: var(--boxShadowPopup);
+  border-radius: 4px;
+  transition: var(--transitionStyleButton);
+}
+
+.popupSize {
+  padding: 15px 30px 17px 30px;
+}
+
+.isOpen {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}

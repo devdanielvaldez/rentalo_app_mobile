@@ -1,0 +1,132 @@
+.box {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  /* max-width: 800px; */
+  width: 100%;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
+.box1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+    @media screen and (max-width: 768px) {
+      margin-top: 30px;
+      padding-top:30px;
+      border-top:1px dotted #E6E6E6;
+  }
+}
+
+.fieldFormBox {
+  padding: 35px 35px 20px;
+  @media (max-width: 768px) {
+    padding: 35px 30px 20px;
+  }
+}
+
+.priceWrapper {
+  display: flex;
+}
+
+.fieldSelect {
+  width: 100%;
+  max-width: 263px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 13px #00000008;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  margin: 0px 20px 0 0;
+  padding: 0 15px;
+  /* display: flex;
+  flex-direction: space-around; */
+
+  &:hover {
+    border-bottom-style: none !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100% !important;
+    max-width: 100%;
+    margin: 0px auto 20px;
+    padding: 5px;
+  }
+  & select{
+    border: 0;
+  }
+}
+
+.hr {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dashed #9f9f9f;
+  width: 100%;
+  /* margin-left: 40px; */
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.fieldSelect > select {
+  border-bottom-style: none !important;
+  /* padding: 5px 15px; */
+}
+
+.price {
+  font-size: 32px;
+  font-weight: bold;
+  padding-left: 0px;
+  color: var(--matterColorDark);
+  margin: 0px 0 0;
+}
+
+.per {
+  padding-left: 10px;
+  font-size: 16px;
+  color: var(--matterColorDark);
+  margin: 0px 0 0;
+}
+
+.estimate {
+  padding: 0px 0px;
+  font-size: 15px;
+  font-weight: 100;
+  color: #9f9f9f;
+  margin: 0px 0 0;
+  text-align: right;
+  max-width: 323px;
+  letter-spacing: 0px;
+
+  line-height: 20px;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+     text-align: left;
+       margin: 20px 0 0;
+  }
+}
+
+.button {
+  background: var(--marketplaceColorDark) 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  /* height: 40px; */
+  align-items: center;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0 22px;
+  white-space: nowrap;
+
+  @media screen and (max-width: 768px) {
+    padding: 9px;
+  }
+}

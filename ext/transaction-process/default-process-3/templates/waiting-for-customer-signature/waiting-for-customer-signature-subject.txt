@@ -1,0 +1,1 @@
+{{transaction.provider.display-name}} is waiting for you to sign the contract!

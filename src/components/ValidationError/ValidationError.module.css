@@ -1,0 +1,9 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  @apply --marketplaceH4FontStyles;
+  margin-top: 6px;
+  margin-bottom: 12px !important;
+  color: var(--failColor);
+  overflow: hidden;
+}

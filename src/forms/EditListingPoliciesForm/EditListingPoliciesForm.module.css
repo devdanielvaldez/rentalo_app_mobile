@@ -1,0 +1,177 @@
+.root {
+  /* Dimensions */
+  width: 100%;
+  height: auto;
+
+  /* Layout */
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  padding-top: 1px;
+
+  @media (--viewportMedium) {
+    padding-top: 2px;
+  }
+}
+
+.formMargins {
+  margin-bottom: 24px;
+
+  @media (--viewportMedium) {
+    margin-bottom: 32px;
+  }
+}
+
+.title {
+  composes: formMargins;
+}
+
+.policy {
+  composes: formMargins;
+  flex-shrink: 0;
+  color: #00000078;
+}
+
+.policy>textarea {
+  background: #f3f3f3;
+  border-radius: 23px;
+  padding-left: 10px;
+  padding-right: 5px;
+  line-height: 21px;
+  /* height: auto !important; */
+  overflow: hidden !important;
+}
+
+.error {
+  color: var(--failColor);
+}
+
+.submitButton {
+  margin-top: 50px;
+  background: var(--marketplaceColor);
+  border-radius: 10px;
+
+  @media (--viewportLarge) {
+    display: inline-block;
+    max-width: 241px;
+    margin-top: 100px;
+  }
+
+  @hover {
+    transform: scale(1.05);
+  }
+
+}
+
+.box {
+  background: #f8f8f8;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.ageRange {
+  /* color: var(--marketplaceColor) !important; */
+  color: var(--marketplaceColorDark) !important;
+}
+
+.inputLabel {
+  margin-bottom: 0;
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 14px;
+  color: #00000078;
+}
+
+.box {
+  background: #ffffff;
+  border: 1px dashed #d8d8d8;
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+
+.features {
+  display: flex;
+  flex-direction: row;
+
+  &>ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &>li {
+      width: calc(100% / 1);
+      margin-bottom: 10px;
+      padding: 0;
+
+      @media (--viewportSmall) {
+        width: calc(100% / 2);
+      }
+
+      @media (--viewportLarge) {
+        width: calc(100% / 3);
+      }
+    }
+  }
+}
+
+.rowBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-direction: column;
+
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+
+
+.errorMessage {
+  color: red;
+  margin-bottom: 20px;
+  margin-top: 8px;
+}
+
+.inputBox {
+  width: 100%;
+  margin-bottom: 30px;
+
+  @media (--viewportMedium) {
+    width: calc(50% - 10px);
+    margin-bottom: 0px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & input {
+    background: #f3f3f3;
+    border-radius: 10px;
+    padding: 13px 16px;
+    height: 56px;
+  }
+
+  & select {
+    background: #f3f3f3;
+    border-radius: 10px;
+    padding: 13px 16px;
+    height: 56px;
+    position: relative;
+    background-image: url('../../assets/downarrow.svg') !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 24px;
+    background-size: 3%;
+  }
+
+  & label {
+    font: normal normal normal 16px/24px Nunito;
+    letter-spacing: 0px;
+    color: var(--matterColorDark);
+  }
+}

@@ -1,0 +1,469 @@
+@import "../../styles/customMediaQueries.css";
+@import "../../styles/propertySets.css";
+
+.layoutWrapperMain {
+  min-height: calc(100vh - var(--topbarHeight));
+  overflow: hidden;
+
+  @media (--viewportMedium) {
+    min-height: calc(100vh - var(--topbarHeightDesktop));
+  }
+
+  @media screen and (max-width: 768px) {
+    min-height: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .sideNav {
+    display: none;
+  }
+}
+
+.root {
+  /* @apply --marketplaceModalRootStyles; */
+  width: calc(100% - 158px);
+  margin: 10px 158px;
+  background-color: #ffffff;
+
+  @media (--viewportMedium) {
+    margin-top: var(--topbarHeight);
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.content {
+  padding: 20px 15px;
+  position: relative;
+
+  @media (min-width: 768px) {
+    padding: 20px;
+  }
+}
+
+/* ================ Tabs & Form ================ */
+
+.tabs {
+  @media (--viewportMedium) {
+    margin-top: 6px;
+  }
+}
+
+.tab {
+  @apply --marketplaceModalTitleStyles;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+  }
+}
+
+.form {
+  margin-top: 24px;
+
+  @media (--viewportMedium) {
+    margin-top: 30px;
+    padding-top: 2px;
+  }
+}
+
+.loginForm {
+  margin-top: 0px;
+
+  /* We don't want the form to take the whole space so that on mobile view
+  the social login buttons will be after the sign up button
+  and not in the bottom of the page.
+  We also need to add flex-basis value so that Safari will show the
+  whole form correctly.  */
+  flex-grow: 0;
+  flex-basis: 340px;
+
+  @media (--viewportMedium) {
+    flex-basis: 410px;
+    margin-top: 10px;
+    padding-top: 2px;
+  }
+}
+
+.signupForm {
+  margin-top: 0px;
+
+  /* We don't want the form to take the whole space so that on mobile view
+  the social login buttons will be after the sign up button
+  and not in the bottom of the page.
+  We also need to add flex-basis value so that Safari will show the
+  whole form correctly.  */
+  flex-grow: 0;
+  flex-basis: 340px;
+
+  @media (--viewportMedium) {
+    flex-basis: 410px;
+    margin-top: 10px;
+    padding-top: 2px;
+  }
+}
+
+.bottomWrapper {
+  @apply --marketplaceModalBottomWrapper;
+
+  /* Align the helper links to the left since there isn't a Primary Button anymore */
+  text-align: left;
+}
+
+/* Terms of Service modal*/
+
+.termsWrapper {
+  width: 100%;
+  padding-top: 40px;
+
+  @media (--viewportMedium) {
+    width: 604px;
+    padding-top: 11px;
+  }
+}
+
+.termsHeading {
+  @apply --marketplaceH1FontStyles;
+  margin: 0 0 19px 0;
+
+  @media (--viewportMedium) {
+    margin: 0 0 19px 0;
+  }
+}
+
+/* ================ Hide Top bar in screens smaller than 768px  ================ */
+
+.hideOnMobile {
+  display: none;
+
+  @media (--viewportMedium) {
+    display: block;
+  }
+}
+
+/* ================ Close icon ================ */
+
+.verifyClose {
+  @apply --marketplaceModalCloseStyles;
+
+  /* This is not a real modal, z-index should not be modal's z-index */
+  z-index: 1;
+}
+
+.closeText {
+  @apply --marketplaceModalCloseText;
+}
+
+.closeIcon {
+  @apply --marketplaceModalCloseIcon;
+}
+
+/* ================ Typography ================ */
+
+/* Title of the modal */
+.modalTitle {
+  @apply --marketplaceModalTitleStyles;
+  text-align: center;
+  font: normal normal normal 32px/43px Roboto;
+  letter-spacing: 0px;
+  color: #222643;
+}
+
+.emailImg {
+  margin: 0 auto 29px;
+  display: block;
+}
+
+/* Paragraph for the Modal */
+.modalMessage {
+  @apply --marketplaceModalParagraphStyles;
+  text-align: center;
+  font: normal normal normal 18px/24px Nunito;
+  letter-spacing: 0px;
+  color: #979797;
+}
+
+/* Make the email pop */
+.email {
+  font-weight: var(--fontWeightHighlightEmail);
+}
+
+/* Helper links */
+.modalHelperLink {
+  @apply --marketplaceLinkStyles;
+  @apply --marketplaceModalHelperLink;
+}
+
+/* Helper texts for the links, not the actual links */
+.modalHelperText {
+  @apply --marketplaceModalHelperText;
+}
+
+.modalIcon {
+  @apply --marketplaceModalIconStyles;
+
+  /* Align the icon and rest of the content in the modal. Sign & Login doesn't use an icon, maybe we should add one? */
+  margin-top: 47px;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+  }
+}
+
+/* ================ Errors ================ */
+
+.error {
+  color: red;
+  margin: 0;
+  /* max-width: 40%; */
+  padding: 0 30px;
+  text-align: center;
+  /* position: absolute; */
+  /* top: 20px; */
+  line-height: 20px;
+}
+
+/* ================ Social logins & SSO ================ */
+
+.signupWithIdpTitle {
+  @apply --marketplaceModalTitleStyles;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 16px;
+  color: var(--matterColorDark);
+
+  @media (--viewportMedium) {
+    margin-top: 6px;
+  }
+}
+
+.confirmInfoText {
+  @apply --marketplaceH4FontStyles;
+}
+
+.buttonIcon {
+  position: absolute;
+  left: 0;
+  margin-left: 20px;
+}
+
+.socialButtonWrapper {
+  margin-bottom: 6px;
+
+  @media (--viewportMedium) {
+    margin-top: 8px;
+  }
+}
+
+.socialButtonsOr {
+  width: 100%;
+  height: 32px;
+  margin: 28px 0 20px 0;
+  text-align: center;
+  position: relative;
+  background-color: var(--matterColorLight);
+
+  &:after {
+    content: "";
+    width: 100%;
+    border-bottom: solid 1px #d2d2d2;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 1;
+  }
+}
+
+@media (--viewportMedium) {
+  .socialButtonsOr {
+    height: 34px;
+    margin: 15px 0;
+  }
+}
+
+.socialButtonsOrText {
+  background-color: var(--matterColorLight);
+  width: auto;
+  display: inline-block;
+  z-index: 3;
+  padding: 0 20px 0 20px;
+  position: relative;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.carBox {
+  width: 90px;
+  height: 80px;
+  /* UI Properties */
+  background: #302d2d05 0% 0% no-repeat padding-box;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 1300px) {
+    display: none;
+  }
+}
+
+.car {
+  width: 50px;
+  height: 50px;
+  opacity: 0.3;
+}
+
+.rowWrapper {
+  display: flex;
+  gap: 58px;
+  justify-content: space-between;
+
+  @media screen and (min-width: 1921px) {
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 1023px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 60px;
+    margin-top: 32px;
+  }
+
+  & .inputWrapper {
+    margin-top: 64px;
+
+    @media screen and (max-width: 1640px) {
+      max-width: 50%;
+    }
+
+    @media screen and (max-width: 1023px) {
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 1023px) {
+      margin-top: 0px;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+
+    & .text2 {
+      text-align: center;
+      font: normal normal normal 16px/21px Roboto;
+      letter-spacing: 0px;
+      color: #000000;
+      margin: 32px 0 42px;
+      font-weight: 600;
+
+      @media screen and (max-width: 767px) {
+        font: normal normal normal 16px/21px Roboto;
+        letter-spacing: 0px;
+        margin: 30px 25px;
+      }
+    }
+  }
+}
+
+.emailBox {
+  max-width: 470px;
+  background: #f8f8f8 0% 0% no-repeat padding-box;
+  border-radius: 30px;
+  margin: 0 auto;
+  padding: 28px 30px 39px;
+}
+
+.formDetailsRight {
+  position: relative;
+  /* background: #F5F5F5 0% 0% no-repeat padding-box; */
+  max-width: 55%;
+
+  @media screen and (min-width: 1921px) {
+    max-width: 60%;
+  }
+
+  @media screen and (max-width: 1640px) {
+    max-width: 50%;
+  }
+
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+
+  &>div {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -16%;
+    bottom: 0;
+    background: #f5f5f5;
+    transform: rotate(83deg);
+    height: 1400px;
+    width: 1400px;
+
+    @media screen and (max-width: 1640px) {
+      left: 8%;
+    }
+  }
+}
+
+.box1 {
+  /* background: #f5f5f5 0% 0% no-repeat padding-box; */
+  padding: 15px 20px 30px 20px;
+  /* margin-top: 4pc; */
+  border-radius: 10px;
+
+  @media screen and (max-width: 880px) {
+    display: none !important;
+  }
+}
+
+.title1 {
+  margin: 0 0 10px;
+  font: normal normal bold 50px/71px Poppins;
+  letter-spacing: 0px;
+  color: #000000;
+
+  @media screen and (max-width: 1640px) {
+    font: normal normal bold 30px/41px Poppins;
+  }
+}
+
+.pTag {
+  margin-top: 0;
+}
+
+.pic {
+  width: 100%;
+  /* max-width: 860px; */
+  object-fit: contain;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}

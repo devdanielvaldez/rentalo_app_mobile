@@ -1,0 +1,206 @@
+@import '../../styles/customMediaQueries.css';
+@import '../../styles/propertySets.css';
+
+@media (max-width: 767px) {
+  .sideNav {
+    display: none;
+  }
+}
+
+.staticPageWrapper {
+  width: 100%;
+  margin: 0px 0px 0px 158px;
+  padding-bottom: 0px;
+  background-image: url('./road1.jpg');
+  background-size: cover;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 158px);
+    margin: 0px 0px 0px 158px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin: 0px auto !important;
+    width: 100% !important;
+  }
+}
+
+
+.mobile {
+  background-image: linear-gradient(to right, #080808, #14213d);
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  align-self: center !important;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobileText {
+  font: normal normal bold 28px/38px Nunito;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+}
+
+.contentWrapper {
+  padding: 0px 24px 30px 24px;
+  width: 100%;
+  height: 100%;
+
+  @media (--viewportMedium) {
+    padding: 120px 24px 30px;
+  }
+
+  @media (min-width:1500px) {
+    padding: 120px 34px 30px;
+  }
+}
+
+.noWrapper {
+  padding: 0px 24px 30px 24px;
+  width: 100%;
+  height: 100%;
+
+  @media (--viewportMedium) {
+    padding: 155px 24px 30px;
+  }
+
+  @media (min-width:1500px) {
+    padding: 155px 34px 30px;
+  }
+}
+
+.testimonialContainer {
+  display: flex;
+  flex-direction: column;
+
+  & .testimonialBlock {
+    margin: 0 0 30px 0;
+    max-width: 100%;
+    width: 100%;
+
+    @media (min-width:1280px) {
+      max-width: 80%;
+    }
+
+    @media (min-width:1500px) {
+      max-width: 60%;
+    }
+
+    &:nth-child(2n) {
+      align-self: flex-end;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+
+  @media (--viewportSmall) {
+    max-height: 198px;
+    max-width: 295px;
+    margin-bottom: 0;
+  }
+}
+
+.testimonial {
+  width: 30px;
+  height: 30px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px;
+
+  @media (--viewportSmall) {
+    padding: 0 0 0 20px;
+  }
+}
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.start {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0 5px 0;
+
+  @media (--viewportLarge) {
+    margin: 0 0 15px 0;
+  }
+}
+
+.text {
+  width: 100%;
+  max-width: 600px;
+  font: normal normal normal 14px/20px Roboto;
+  letter-spacing: 0px;
+  color: var(--matterColor);
+  margin: 0;
+
+  @media (--viewportLarge) {
+    font: normal normal normal 16px/25px Roboto;
+  }
+}
+
+.name {
+  padding-left: 10px;
+  font: normal normal bold 20px/28px Nunito;
+  letter-spacing: 0px;
+  color: #000000;
+  margin: 0;
+
+  @media (--viewportLarge) {
+    padding-left: 20px;
+    font: normal normal bold 24px/32px Nunito;
+  }
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+
+  @media (--viewportSmall) {
+    padding: 10px 30px 10px 10px;
+    flex-direction: row;
+  }
+}
+
+
+.qoute {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.testimonialVdo {
+  width: 30%;
+  overflow: hidden;
+  position: relative;
+
+  &>video {
+    width: 100%;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,106 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  position: relative;
+  box-shadow: var(--boxShadowBottomForm);
+
+  @media (--viewportLarge) {
+    box-shadow: none;
+
+    /* Clearfix */
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.textarea {
+  @apply --marketplaceH4FontStyles;
+  /* Avoid text going behind the submit button */
+
+  margin: 0;
+
+  /* We need to remove horizontal paddings,
+   since textarea uses content-box (autosize library fix). */
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 100px !important;
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--matterColorDark);
+
+  @media (--viewportLarge) {
+    width: 100%;
+  }
+}
+
+.spinner {
+  stroke: var(--matterColorLight);
+  width: 18px;
+  height: 18px;
+  strokeWidth: 4px;
+}
+
+.fillSuccess {
+  fill: var(--successColor);
+}
+
+.strokeMatter {
+  stroke: var(--matterColor);
+}
+
+.submitContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.errorContainer {
+  display: block;
+  flex: 1;
+  text-align: right;
+  padding: 26px 24px 0 0;
+}
+
+.error {
+  @apply --marketplaceH5FontStyles;
+  font-weight: var(--fontWeightMedium);
+  color: var(--failColor);
+  margin: 0;
+}
+
+.submitButton {
+  @apply --marketplaceButtonStylesSecondary;
+  @apply --marketplaceH5FontStyles;
+  font-weight: var(--fontWeightMedium);
+  background-color: var(--matterColorDark);
+  border-color: var(--matterColorDark);
+  color: var(--matterColorLight);
+  float: right;
+  padding: 0 16px;
+  min-height: auto;
+  min-width: 150px;
+  height: 45px;
+  border-radius: 10px;
+
+  display: inline-block;
+  margin: 17px 0 0 0;
+  width: auto;
+
+  & .sendIcon {
+    margin: -3px 10px 0 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--marketplaceColorDark);
+    border-color: var(--marketplaceColorDark);
+    color: var(--matterColorLight);
+
+    & .sendIcon {
+      & .strokeMatter {
+        stroke: var(--matterColorLight);
+      }
+    }
+  }
+}

@@ -1,0 +1,821 @@
+@import '../../styles/customMediaQueries.css';
+
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: 'AromaEuro2021BoldBold_57db80490676849c4f3b3ed8fad0f008';
+  src: '../fonts/AromaEuro2021BoldBold_57db80490676849c4f3b3ed8fad0f008.eot';
+  src: '../fonts/AromaEuro2021BoldBold_57db80490676849c4f3b3ed8fad0f008.eot'
+      format('embedded-opentype'),
+    '../fonts/AromaEuro2021BoldBold_57db80490676849c4f3b3ed8fad0f008.woff2' format('woff2'),
+    '../fonts/AromaEuro2021BoldBold_57db80490676849c4f3b3ed8fad0f008.woff' format('woff'),
+    '../fonts/AromaEuro2021BoldBold_57db80490676849c4f3b3ed8fad0f008.ttf' format('truetype'),
+    '../fonts/AromaEuro2021BoldBold_57db80490676849c4f3b3ed8fad0f008.svg#AromaEuro2021BoldBold_57db80490676849c4f3b3ed8fad0f008'
+      format('svg');
+}
+
+@media (max-width: 767px) {
+  .sideNav {
+    display: none;
+  }
+}
+
+.picStoresApple {
+  width: 20%;
+  cursor: pointer;
+}
+.picStoresGoogle {
+  width: 20%;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+
+.staticPageWrapper {
+  width: calc(100% - 158px);
+  margin: 0px 0px 0px 158px;
+  background-color: white;
+  padding-bottom: 50px;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 158px);
+    margin: 0px 0px 0px 158px;
+    padding-bottom: 100px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin: 0px auto !important;
+    width: 100% !important;
+  }
+}
+
+.wrapper {
+  padding: 30px 24px;
+  width: 100%;
+  height: 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+  background: transparent linear-gradient(108deg, #d8ddeb 0%, #fbf6ef 100%) 0% 0% no-repeat
+    border-box;
+
+  @media (--viewportMedium) {
+    padding: 120px 30px 30px;
+  }
+}
+
+.noWrapper {
+  padding: 30px 24px;
+  width: 100%;
+  height: 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+  background: transparent linear-gradient(108deg, #d8ddeb 0%, #fbf6ef 100%) 0% 0% no-repeat
+    border-box;
+
+  @media (--viewportMedium) {
+    padding: 120px 30px 30px;
+  }
+}
+
+.background {
+  position: relative;
+  padding-left: 120px;
+  padding-top: -40px;
+}
+
+.row1 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.listing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    display: none;
+  }
+}
+
+.listingCard {
+  padding: 5px;
+
+  @media (min-width: 767px) {
+    padding: 10px;
+  }
+}
+
+.cardSliderSec {
+  padding: 0 15px;
+}
+
+.listingWrapper {
+  width: 20%;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 1200px) {
+    width: 33%;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 50%;
+  }
+}
+
+.hr {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dashed #dedede;
+  width: 100%;
+}
+
+.exploreButton {
+  background: #ff7900 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font: normal normal 500 16px/20px Nunito;
+  letter-spacing: 0px;
+  text-align: center;
+  transition: all ease 0.5s;
+  border: none;
+
+  @media (--viewportMedium) {
+    padding: 12px 50px;
+    font: normal normal 500 20px/27px Nunito;
+  }
+
+  &:hover {
+    transform: scale(1.01);
+    transition: all ease 0.5s;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.faqs {
+  padding-top: 30px;
+  margin-bottom: 0 !important;
+}
+
+.sectionMap {
+  background: transparent linear-gradient(180deg, #f4faff 0%, #ffffff 100%) 0% 0% no-repeat
+    padding-box;
+  margin: 45px 0;
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 28px;
+  width: 878px;
+  text-align: center;
+  letter-spacing: 0px;
+  color: var(--matterColorDark);
+  font: normal normal 600 18px/27px Poppins;
+  letter-spacing: 0px;
+  opacity: 1;
+  margin-top: 40px;
+
+  @media (--viewportMedium) {
+    font: normal normal normal 20px/32px Poppins;
+  }
+
+  @media (--viewportLarge) {
+    font: normal normal normal 25px/38px Poppins;
+  }
+
+  & > span {
+    font: normal normal 600 18px/27px Poppins;
+    letter-spacing: 0px;
+
+    @media (--viewportMedium) {
+      font: normal normal bold 25px/38px Poppins;
+      background: #f7e5c3;
+    }
+  }
+}
+
+.sectionSubTitle {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  font: normal normal normal 16px/22px Nunito;
+  letter-spacing: 0px;
+  color: var(--matterColor);
+  margin-bottom: 35px;
+  margin-top: 0;
+}
+
+.mapWrapper2 {
+  width: 100%;
+  max-width: 68%;
+  margin: 0px auto 50px;
+  position: relative;
+  padding: 0px 0px;
+}
+
+.sectionMap {
+  position: relative;
+  width: 100%;
+  padding: 0px 24px;
+}
+
+.upperMap {
+  width: 100%;
+  max-width: 100%;
+  z-index: 99999999;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  bottom: 20px;
+  display: none;
+}
+
+.tabList {
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 100%;
+}
+
+.tabContent {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 10px 25px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.tabContent p {
+  margin: 0;
+  width: 100%;
+  color: #a29f9f;
+}
+
+.tabContent h4 {
+  margin: 0;
+  width: 100%;
+  font-weight: 500;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .tabList {
+    padding: 0;
+    list-style: none;
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .upperMap {
+    osition: absolute;
+    bottom: 30px;
+    overflow: scroll;
+    width: 100%;
+    max-width: 800px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .mapWrapper2 {
+    max-width: 100%;
+    margin: 0px auto 35px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sectionSubTitle {
+    display: none;
+  }
+
+  .tabList {
+    padding: 0;
+    list-style: none;
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .upperMap {
+    osition: absolute;
+    bottom: 30px;
+    overflow: scroll;
+    width: 100%;
+    max-width: 320px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  .mapWrapper2 {
+    margin: 0px auto;
+    width: 100%;
+  }
+}
+
+.homePageBannerSec {
+  display: flex;
+  background: url('./Enmascarar.png');
+  background-position: center left 30%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-direction: column;
+
+  @media (min-width: 580px) {
+    flex-direction: row;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 10px 0 0px;
+  }
+
+  & .bannerLeft {
+    width: 100%;
+
+    @media (--viewportMedium) {
+      width: 50%;
+    }
+
+    & .row {
+      display: none;
+      flex-direction: row;
+      align-items: center;
+
+      @media (--viewportMedium) {
+        display: flex;
+      }
+
+      & .pic1 {
+        object-fit: contain;
+        margin-right: 50px;
+      }
+
+      & .pic2 {
+        object-fit: contain;
+      }
+    }
+
+    & .front {
+      & .title {
+        max-width: 590px;
+        width: 100%;
+        height: 100%;
+        font: normal normal bold 24px/35px Poppins;
+        letter-spacing: 0px;
+        color: var(--matterColorDark);
+        margin: 10px 0 15px;
+
+        @media (min-width: 1200px) {
+          font: normal normal bold 30px/45px Poppins;
+          margin: 18px 0 20px;
+        }
+
+        @media (min-width: 1600px) {
+          font: normal normal bold 36px/55px Poppins;
+        }
+      }
+
+      & .text {
+        font: normal normal normal 16px/25px Poppins;
+        letter-spacing: 0px;
+        color: #00000094;
+        margin: 0;
+      }
+
+      & .button {
+        background: #ff7900 0% 0% no-repeat padding-box;
+        border-radius: 100px;
+        font: normal normal normal 16px/25px Poppins;
+        letter-spacing: 0px;
+        color: #ffffff;
+        padding: 8px 30px;
+        cursor: pointer;
+        margin: 20px 0;
+        display: inline-block;
+        transition: all ease 0.5s;
+        border: none;
+
+        @media (min-width: 1200px) {
+          margin: 30px 0;
+          padding: 9px 40px;
+        }
+
+        &:hover {
+          transition: all ease 0.5s;
+          background: var(--marketplaceColorDark);
+        }
+      }
+    }
+  }
+
+  & .bannerRight {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    @media (--viewportMedium) {
+      display: flex;
+    }
+
+    @media (min-width: 580px) {
+      width: 50%;
+      align-items: flex-end;
+    }
+
+    @media (--viewportMedium) {
+      align-items: center;
+    }
+
+    @media (min-width: 1400px) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    & .teslaPic {
+      width: 100%;
+      object-fit: contain;
+      align-self: flex-end;
+      margin-top: 25px;
+
+      @media (min-width: 1400px) {
+        width: calc(100% - 302px);
+        margin-top: 0px;
+      }
+    }
+
+    & .car_details {
+      width: 100%;
+      display: inline-block;
+      border: 1px solid #fff;
+      padding: 5px 0px;
+      border-radius: 10px;
+      background: #f4f3f3;
+      position: relative;
+
+      @media (min-width: 580px) {
+        min-width: 270px;
+        max-width: 270px;
+      }
+
+      @media (min-width: 1024px) {
+        min-width: 302px;
+        max-width: 302px;
+      }
+
+      @media (min-width: 1400px) {
+        margin-right: 10px;
+      }
+
+      & .whiteImgIndicator {
+        position: absolute;
+        top: 20%;
+        left: 110%;
+        display: none;
+
+        @media (min-width: 1400px) {
+          display: block;
+        }
+      }
+
+      & .inner_padding {
+        padding: 15px;
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      & .modal_name {
+        width: 50%;
+        display: inline-block;
+        margin: 0;
+        font: normal normal bold 17px/23px Nunito;
+        letter-spacing: 0px;
+        color: var(--matterColorDark);
+      }
+
+      & .price_details {
+        width: 50%;
+        display: inline-block;
+        text-align: right;
+        font: normal normal 600 16px/22px Nunito;
+        letter-spacing: 0px;
+        color: rgba(0, 0, 0, 0.4);
+        margin: 0;
+      }
+    }
+
+    & .buttons_details {
+      width: 100%;
+      display: inline-block;
+      border-top: 1px solid #e6e5e5;
+
+      & .primary_button {
+        display: inline-block;
+        background-color: transparent;
+        color: var(--marketplaceColorDark);
+        border: 1px dotted var(--marketplaceColorDark);
+        border-radius: 50px;
+        font: normal normal 600 16px/22px Nunito;
+        letter-spacing: 0px;
+        padding: 6px 20px;
+
+        &:hover {
+          background-color: var(--marketplaceColorDark);
+          color: #fff;
+          font-weight: 600;
+          border: 1px dotted var(--marketplaceColorDark);
+        }
+      }
+
+      & .button_link {
+        width: 40%;
+        display: inline-block;
+        text-align: center;
+        margin: 0px;
+        font: normal normal 600 16px/22px Nunito;
+        letter-spacing: 0px;
+        color: var(--marketplaceColorDark);
+
+        & > a {
+          font: normal normal 600 16px/22px Nunito;
+          letter-spacing: 0px;
+          color: var(--marketplaceColorDark);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.fixedWidthContainer {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (--viewportXLarge) {
+    max-width: 90%;
+  }
+
+  @media (--viewportXXLarge) {
+    max-width: 90%;
+  }
+}
+
+.vehicletypeSlider {
+  width: 100%;
+  padding: 22px 15px;
+
+  & :global(.slick-slide) {
+    padding: 0 5px;
+
+    @media (min-width: 414px) {
+      padding: 0 10px;
+    }
+  }
+
+  & .categoryButtonIcon {
+    height: 24px;
+    display: inline-flex;
+    margin-right: 10px;
+
+    @media (min-width: 414px) {
+      height: 30px;
+    }
+
+    @media (--viewportLarge) {
+      height: 34px;
+    }
+
+    @media (min-width: 1620px) {
+      margin-right: 15px;
+    }
+  }
+
+  & .categoryButton {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #d8d8d8;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font: normal normal bold 14px/20px Nunito;
+    letter-spacing: 0px;
+    color: #000000;
+
+    @media (min-width: 414px) {
+      padding: 15px;
+      font: normal normal bold 16px/20px Nunito;
+    }
+
+    @media (--viewportLarge) {
+      font: normal normal bold 18px/24px Nunito;
+      padding: 20px;
+    }
+
+    @media (min-width: 1800px) {
+      font: normal normal bold 20px/27px Nunito;
+    }
+  }
+}
+
+.listingCars {
+  padding: 60px 10px;
+
+  & > h2 {
+    text-align: center;
+    font: normal normal 600 25px/38px Poppins;
+    letter-spacing: 0px;
+    color: var(--matterColorDark);
+    margin: 0 0 30px 0;
+  }
+}
+
+.mobileProductDetails {
+  display: block;
+  padding: 40px 24px;
+
+  & .teslaPic {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-end;
+    margin-top: 0;
+    margin-bottom: -25px;
+    z-index: 1;
+    position: relative;
+  }
+
+  & .car_details {
+    width: 100%;
+    display: inline-block;
+    border: 1px solid #fff;
+    padding: 50px 0px 5px;
+    border-radius: 10px;
+    background: #f4f3f3;
+    position: relative;
+
+    @media (min-width: 768px) {
+      min-width: 270px;
+      max-width: 270px;
+    }
+
+    @media (min-width: 1024px) {
+      min-width: 302px;
+      max-width: 302px;
+    }
+
+    @media (min-width: 1400px) {
+      margin-right: 10px;
+    }
+
+    & .whiteImgIndicator {
+      position: absolute;
+      top: 20%;
+      left: 110%;
+      display: none;
+
+      @media (min-width: 1400px) {
+        display: block;
+      }
+    }
+
+    & .inner_padding {
+      padding: 15px;
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    & .modal_name {
+      width: 50%;
+      display: inline-block;
+      margin: 0;
+      font: normal normal bold 17px/23px Nunito;
+      letter-spacing: 0px;
+      color: var(--matterColorDark);
+    }
+
+    & .price_details {
+      width: 50%;
+      display: inline-block;
+      text-align: right;
+      font: normal normal 600 16px/22px Nunito;
+      letter-spacing: 0px;
+      color: rgba(0, 0, 0, 0.4);
+      margin: 0;
+    }
+  }
+
+  & .buttons_details {
+    width: 100%;
+    display: inline-block;
+    border-top: 1px solid #e6e5e5;
+
+    & .primary_button {
+      display: inline-block;
+      background-color: transparent;
+      color: var(--marketplaceColorDark);
+      border: 1px dotted var(--marketplaceColorDark);
+      border-radius: 50px;
+      font: normal normal 600 16px/22px Nunito;
+      letter-spacing: 0px;
+      padding: 6px 20px;
+
+      &:hover {
+        background-color: var(--marketplaceColorDark);
+        color: #fff;
+        font-weight: 600;
+        border: 1px dotted var(--marketplaceColorDark);
+      }
+    }
+
+    & .button_link {
+      width: 40%;
+      display: inline-block;
+      text-align: center;
+      margin: 0px;
+      font: normal normal 600 16px/22px Nunito;
+      letter-spacing: 0px;
+      color: var(--marketplaceColorDark);
+
+      & > a {
+        font: normal normal 600 16px/22px Nunito;
+        letter-spacing: 0px;
+        color: var(--marketplaceColorDark);
+        text-decoration: none;
+      }
+    }
+  }
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+}
+
+.mobileMultiSlider {
+  display: block;
+  width: 100%;
+  padding: 0px;
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+
+  & :global(.slick-slider .slick-arrow > svg) {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+  }
+
+  & :global(.slick-arrow) {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 10;
+  }
+
+  & :global(.slick-arrow.slick-prev) {
+    left: 0;
+  }
+
+  & :global(.slick-arrow.slick-next) {
+    right: 0;
+  }
+}
+.vehicleRightSec {
+  width: 100%;
+}
+.gifImage {
+  width: 100%;
+  height: auto;
+}

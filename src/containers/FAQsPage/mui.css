@@ -1,0 +1,15 @@
+@media screen and (max-width: 768px) {
+  .MuiTypography-root {
+    max-width: 100%;
+    font-size: small !important;
+    text-align: left;
+  }
+
+  .css-1nq2yug-MuiTypography-root {
+    padding-right: 10px;
+  }
+}
+
+.css-w6igdc-MuiPaper-root-MuiAccordion-root:before {
+  display: none !important;
+}

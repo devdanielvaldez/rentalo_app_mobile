@@ -1,0 +1,45 @@
+@import '../../styles/customMediaQueries.css';
+
+.rowBox {
+  padding: 50px 20px;
+
+  & > select {
+    margin-bottom: 20px;
+  }
+
+  & > button {
+    margin-top: 30px;
+  }
+}
+
+.company {
+  display: flex;
+  align-items: flex-end;
+
+  & > div {
+    width: 50%;
+    margin-right: 18px;
+  }
+
+  & > button {
+    height: 60px;
+    width: 120px;
+    border-radius: 2px;
+  }
+}
+
+.submitButton {
+  max-width: 500px;
+}
+
+.field {
+  max-width: 250px;
+  margin-top: 20px;
+}
+
+.successMsg {
+  color: var(--successColor);
+}
+.errorMsg {
+  color: red;
+}

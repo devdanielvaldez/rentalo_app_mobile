@@ -1,0 +1,15 @@
+.root {}
+
+.input {
+  border: solid 1px var(--matterBorderColor);
+}
+
+.inputSuccess {
+  border-color: var(--matterBorderColor);
+}
+
+.inputError {
+  border-color: var(--failColor);
+}
+
+.textarea {}

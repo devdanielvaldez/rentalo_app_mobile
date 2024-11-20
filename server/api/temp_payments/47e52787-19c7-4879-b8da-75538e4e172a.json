@@ -1,0 +1,9 @@
+{
+  "paymentId": "47e52787-19c7-4879-b8da-75538e4e172a",
+  "sessionId": "cs_test_a1ULzWc6BxDVgmQmMBkbwMZuJhKN41jVq8o7Q8ewOU6BowStwGGXjotjDf",
+  "status": "success",
+  "price": 5583,
+  "stripeCustomer": "cus_PapedfgzirQanK",
+  "vehicleName": "HYUNDAI SANTA FE SPORT 4WD 2014",
+  "created_at": "2024-10-31T14:40:37.570Z"
+}

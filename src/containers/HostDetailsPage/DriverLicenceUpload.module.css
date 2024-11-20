@@ -1,0 +1,25 @@
+.dropzone {
+  background-color: #fcfcfc;
+  height: 10pc;
+  width: 100%;
+  border: 2px dashed #e7e7e7;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (--viewportSmall) {
+    width: 20pc;
+  }
+}
+
+.label {
+  display: block;
+  width: 60%;
+}
+
+.label p {
+  font: normal normal 600 16px/23px Nunito;
+  letter-spacing: 0px;
+  color: var(--matterColorDark);
+}

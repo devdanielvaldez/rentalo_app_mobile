@@ -1,0 +1,325 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+
+  /* Remove link's hover effect */
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.threeToTwoWrapper {
+  /* Layout */
+  display: block;
+  width: 100%;
+  position: relative;
+  transition: var(--transitionStyleButton);
+  border: 1px solid #e9e9e9;
+  border-radius: 20px;
+  padding: 15px;
+  height: 100%;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: var(--boxShadowListingCard);
+  }
+}
+
+.listingTitle {
+  font: normal normal 800 18px/24px Nunito;
+  letter-spacing: 0px;
+  color: var(--matterColorDark);
+  margin: 10px 0 0;
+}
+
+.listingImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Firefox doesn't support image aspect ratio inside flexbox */
+.aspectWrapper {
+  padding-bottom: 66.6667%;
+  /* 3:2 Aspect Ratio */
+  background: var(--matterColorNegative);
+  /* Loading BG color */
+}
+
+.rootForImage {
+  /* Layout - image will take space defined by aspect ratio wrapper */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-radius: var(--borderRadius);
+}
+
+.info {
+  /* Layout */
+  display: flex;
+  flex-direction: row;
+  padding: 16px 0 2px 0;
+}
+
+.price {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  margin-right: 18px;
+}
+
+.priceValue {
+  /* Font */
+  @apply --marketplaceH3FontStyles;
+
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.perUnit {
+  /* Font */
+  @apply --marketplaceTinyFontStyles;
+  color: var(--matterColor);
+
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  /* Font */
+  @apply --marketplaceH3FontStyles;
+  color: var(--matterColor);
+
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.authorInfo {
+  /* Font */
+  @apply --marketplaceTinyFontStyles;
+  color: var(--matterColor);
+
+  /* Remove default margins from font */
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (--viewportMedium) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.longWord {
+  /* fallback option */
+  word-break: break-all;
+  /* use break-word if available */
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* new classes for listing card long */
+
+.reviews {
+  color: var(--marketplaceColorDark);
+  background: #ff790026 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  margin: 0;
+  max-height: 1.8pc;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font: normal normal bold 13px/18px Nunito;
+  letter-spacing: 0px;
+}
+
+.trips {
+  margin: 0;
+  font: normal normal normal 14px/19px Nunito;
+  letter-spacing: 0px;
+  color: #656363;
+  max-height: 2pc;
+  margin-left: 15px;
+}
+
+.starIcon {
+  color: var(--marketplaceColorDark);
+  transform: scale(0.7);
+}
+
+.listingIconWrapper {
+  display: flex;
+  font: normal normal normal 13px/18px Poppins;
+  letter-spacing: 0px;
+  color: #a8a8a8;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.listingIcon {
+  width: 20px;
+  object-fit: contain;
+  margin-right: 6px;
+}
+
+.listingPrice {
+  font: normal normal 600 16px/24px Nunito;
+
+  @media (--viewportMedium) {
+    font: normal normal 600 18px/26px Nunito;
+  }
+
+  &>span {
+    font: normal normal normal 15px/20px Nunito;
+    letter-spacing: 0px;
+    color: #A8A8A8;
+
+    @media (--viewportMedium) {
+      font: normal normal normal 16px/26px Nunito;
+    }
+  }
+}
+
+
+.rightBtn {
+  display: flex;
+  align-items: center;
+}
+
+.cardFeatures {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  & .listingIconWrapper {
+    justify-content: flex-start;
+    margin-top: 15px;
+
+    @media (max-width: 1500px) {
+      width: calc(100% / 2);
+    }
+  }
+}
+
+.rentNowButton {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid var(--marketplaceColorDark);
+  border-radius: 23px;
+  color: var(--marketplaceColorDark);
+  padding: 0 25px;
+  font-size: 14px;
+  height: 2pc;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    background-color: var(--marketplaceColorDark);
+  }
+}
+
+.favouritesButtonIcon {
+  color: var(--marketplaceColorDark);
+  height: 1.2pc;
+}
+
+.favouritesButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border: 1px solid var(--marketplaceColorDark);
+  border-radius: 111px;
+  width: 2pc;
+  height: 2pc;
+}
+
+.listingImage {
+  border-radius: 15px;
+}
+
+.favButtonWrapper {
+  margin: auto 0;
+  border: 1px solid var(--marketplaceColorDark);
+  border-radius: 111px;
+  height: 2pc;
+  width: 2pc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+  align-content: center;
+
+  &>svg {
+    width: 18px;
+  }
+}
+
+.favButtonNotSelected {
+  cursor: pointer;
+  display: block;
+  color: var(--marketplaceColorDark);
+  margin-top: 2px;
+
+  &:hover {
+    transform: scale(1.1);
+    filter: invert(43%) sepia(100%) saturate(762%) hue-rotate(357deg) brightness(102%) contrast(109%);
+  }
+
+  &>svg {
+    width: 18px;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.favButtonSelected {
+  cursor: pointer;
+  display: block;
+  filter: invert(43%) sepia(100%) saturate(762%) hue-rotate(357deg) brightness(102%) contrast(109%);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &>svg {
+    width: 18px;
+  }
+}

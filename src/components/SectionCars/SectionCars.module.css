@@ -1,0 +1,237 @@
+.appereance {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+
+  @media (min-width:991px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media (min-width:1300px) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.subTitle {
+  font-family: var(--fontFamily2);
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  margin: 0;
+  color: var(--matterColor);
+  display: none;
+
+  @media (--viewportMedium) {
+    display: block;
+  }
+}
+
+.subTitleMobile {
+  font-family: var(--fontFamily2);
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  margin: 0 0 30px 0;
+  color: var(--matterColor);
+  display: block;
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+}
+
+.image {
+  width: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.why {
+  padding: 50px 24px;
+}
+
+.pTag {
+  font-size: 15px;
+  text-align: left;
+  line-height: 22px;
+}
+
+.pTag2 {
+  font-size: 15px;
+  text-align: left;
+  line-height: 22px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.boxInfo {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+
+  @media (min-width:991px) {
+    padding-top: 10px;
+    padding-left: 0px;
+  }
+
+  @media (min-width:1300px) {
+    padding-left: 10px;
+    padding-top: 0px;
+  }
+
+  & .title {
+    font: normal normal bold 18px/26px Nunito;
+    letter-spacing: 0px;
+    color: var(--matterColorDark);
+    margin: 0;
+  }
+
+  & .pTag {
+    font-size: 16px;
+    line-height: 26px;
+    font-style: italic;
+    font-weight: normal;
+    font-family: var(--fontFamily2);
+    font-family: var(--fontFamily2);
+    letter-spacing: 0px;
+    color: var(--matterColorDark);
+    margin: 0;
+    font-weight: 400;
+  }
+}
+
+.pTagMobile {
+  padding-left: 10px;
+  font-size: 15px;
+  text-align: left;
+  line-height: 22px;
+
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+}
+
+.link {
+  margin-bottom: 0;
+
+  &>a {
+    font: normal normal 600 16px/25px Poppins;
+    letter-spacing: 0px;
+    color: var(--marketplaceColorDark);
+    font-family: var(--fontFamily2);
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0;
+
+    @media (--viewportMedium) {
+      font: normal normal bold 15px/20px Nunito;
+    }
+
+    &>img {
+      margin-left: 5px;
+    }
+  }
+}
+
+.headingMobile {
+  font: normal normal bold 24px/34px Poppins;
+  letter-spacing: 0px;
+  color: var(--matterColorDark);
+  margin: 0 0 15px 0;
+  text-align: left;
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+
+  @media (--viewportLarge) {
+    font: normal normal bold 32px/48px Poppins;
+  }
+}
+
+.heading {
+  font: normal normal bold 24px/24px Poppins;
+  letter-spacing: 0px;
+  color: var(--matterColorDark);
+  margin: 0 0 15px 0;
+
+  @media (--viewportLarge) {
+    font: normal normal bold 30px/30px Poppins;
+  }
+}
+
+.vehicleContainer {
+  margin-top: 20px;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+
+  @media (min-width:991px) {
+    flex-direction: row;
+  }
+
+  @media (min-width:1300px) {
+    flex-direction: column;
+  }
+}
+
+.vehicleWork {
+  padding: 0px;
+  margin-bottom: 15px !important;
+
+  @media (min-width:991px) {
+    padding: 0px 2%;
+    margin-bottom: 0px !important;
+  }
+
+  @media (min-width:1300px) {
+    margin-bottom: 15px !important;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    display: none;
+  }
+}
+
+.vehicleWorkBlock {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width:1300px) {
+    flex-direction: row;
+  }
+
+  & .leftSec {
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2%;
+
+    @media (min-width:1300px) {
+      /* width: 50%; */
+      padding-right: 2%;
+      padding-bottom: 0;
+    }
+  }
+
+  & .rightSec {
+    width: 100%;
+    text-align: center;
+
+    @media (min-width:1300px) {
+      width: 50%;
+      text-align: left;
+    }
+  }
+}

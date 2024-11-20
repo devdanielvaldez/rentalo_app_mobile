@@ -1,0 +1,139 @@
+.root {
+  /* Dimensions */
+  width: 100%;
+  height: auto;
+
+  /* Layout */
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+
+  padding-top: 1px;
+}
+
+.title {
+  margin-bottom: 24px;
+}
+
+.error {
+  color: var(--failColor);
+}
+
+
+.submitButton {
+  margin-top: 50px;
+  background: var(--marketplaceColor);
+  border-radius: 10px;
+
+  @media (--viewportLarge) {
+    margin-top: 100px;
+  }
+}
+
+@media (--viewportMedium) {
+  .root {}
+
+  .title {
+    margin-bottom: 32px;
+  }
+}
+
+@media (--viewportLarge) {
+  .calendarWrapper {
+    flex-grow: 0;
+    margin-bottom: 24px;
+  }
+
+  .submitButton {
+    display: inline-block;
+    width: 241px;
+    margin-top: 86px;
+  }
+}
+
+.calendarWrapper {
+  flex-grow: 1;
+  position: relative;
+  margin-bottom: 24px;
+  width: 100%;
+
+  @media (min-width:1280px) {
+    width: 65%;
+  }
+}
+
+.availabilitySec {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width:1280px) {
+    flex-direction: row;
+  }
+
+  & .setAvailabilty {
+    width: 100%;
+    padding-bottom: 30px;
+
+    @media (min-width:1280px) {
+      width: 35%;
+      padding-right: 30px;
+      padding-bottom: 0px;
+    }
+
+    &>h2 {
+      font: normal normal 600 20px/24px Nunito;
+      letter-spacing: 0px;
+      color: var(--matterColorDark);
+      margin: 0 0 10px 0;
+    }
+
+    &>p {
+      font: normal normal 400 15px/20px Nunito;
+      letter-spacing: 0px;
+      color: var(--matterColorAnti);
+      margin: 0 0 20px 0;
+    }
+  }
+}
+
+.timeContainer {
+  & .allDaysContent {
+    & .availability {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      & .availabilityLeft {
+        display: flex;
+        align-items: center;
+
+        & :global(.react-switch-bg) {
+          height: 17px !important;
+          width: 40px !important;
+        }
+
+        & :global(.react-switch-handle) {
+          width: 16px !important;
+          height: 16px !important;
+        }
+
+        &>label {
+          margin-bottom: 0;
+          padding-left: 10px;
+        }
+      }
+
+      & .availabilityRight {
+        font: normal normal 400 15px/20px Nunito;
+        letter-spacing: 0px;
+        color: var(--successColor);
+      }
+    }
+  }
+}

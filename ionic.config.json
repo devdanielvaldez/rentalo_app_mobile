@@ -1,0 +1,7 @@
+{
+    "name": "Rentalo",
+    "integrations": {
+      "capacitor": {}
+    },
+    "type": "react"
+  }

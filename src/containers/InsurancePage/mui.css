@@ -1,0 +1,10 @@
+@media screen and (max-width: 768px) {
+  .css-1fyyp8j-MuiGrid-root {
+    margin-left: 15px !important;
+  }
+  .css-ks3dpq-MuiGrid-root > .MuiGrid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

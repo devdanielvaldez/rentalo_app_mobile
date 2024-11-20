@@ -1,0 +1,9 @@
+{
+  "paymentId": "b1f45af5-eae1-4f4a-b5ff-b197db9e1742",
+  "sessionId": "cs_test_a1phtpAgdfTpdOzQ7jFdfmQFnUnAsFFlwAfVMDjEXfwGMhPuyFM9j5seVD",
+  "status": "pending",
+  "price": "3150.00",
+  "stripeCustomer": "cus_PapedfgzirQanK",
+  "vehicleName": "PEUGEOT PARTNER B9 2018",
+  "created_at": "2024-10-31T14:24:01.918Z"
+}

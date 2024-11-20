@@ -1,0 +1,179 @@
+.why {
+  display: flex;
+  align-items: center;
+  padding: 80px 24px 50px;
+  flex-direction: column;
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
+
+  & .whyLeftImg {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+
+    @media (min-width: 1200px) {
+      width: 50%;
+      display: block;
+      margin-bottom: 0px;
+    }
+
+    &>img {
+      max-width: 100%;
+    }
+  }
+
+  & .whyRightContent {
+    width: 100%;
+
+    @media (min-width: 1200px) {
+      width: 50%;
+    }
+
+    & .heading {
+      font-size: 24px;
+      line-height: 38px;
+      font-weight: 700;
+      color: var(--matterColorDark);
+      margin: 0 0 15px 0;
+      text-align: left;
+    }
+
+    & .subTitle {
+      font-size: 16px;
+      color: var(--matterColor);
+      line-height: 22px;
+      font-family: var(--fontFamily2);
+      margin: 0;
+      text-align: left;
+    }
+
+    & .whyRent {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+
+      & .whyRentBlock {
+        width: calc(100% / 1);
+        display: flex;
+        align-items: center;
+        margin-top: 34px;
+
+        @media (--viewportMedium) {
+          width: calc(100% / 2);
+        }
+
+        @media (max-width:767px) {
+          &:nth-child(1) {
+            order: 1;
+          }
+
+          &:nth-child(2) {
+            order: 3;
+          }
+
+          &:nth-child(3) {
+            order: 2;
+          }
+
+          &:nth-child(4) {
+            order: 4;
+          }
+        }
+
+        &>div {
+          padding: 10px;
+
+          &>img {
+            max-width: 100%;
+            width: 36px;
+          }
+        }
+
+        &>p {
+          padding: 0 14px;
+          line-height: 120%;
+          margin: 0;
+          font: normal normal normal 16px/24px Nunito;
+          letter-spacing: 0px;
+          color: #000000;
+          width: calc(100% - 63px);
+
+          @media (max-width:767px) {
+            font: normal normal normal 18px/24px Nunito;
+          }
+        }
+      }
+    }
+
+    & .ourFeatures {
+      margin-top: 50px;
+    }
+
+    & .seguro {
+      background: #42a5f526 0% 0% no-repeat padding-box;
+      border-radius: 10px;
+      opacity: 1;
+      max-height: 4pc;
+      width: 63px;
+      height: 63px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    & .money {
+      background: #28d57926 0% 0% no-repeat padding-box;
+      opacity: 1;
+      border-radius: 10px;
+      width: 63px;
+      height: 63px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: 4pc;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.check {
+  background: #7b1fa226 0% 0% no-repeat padding-box;
+  opacity: 1;
+  border-radius: 10px;
+  width: 63px;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 4pc;
+}
+
+.exchange {
+  background: #3949ab29 0% 0% no-repeat padding-box;
+  opacity: 1;
+  border-radius: 10px;
+  max-height: 4pc;
+  width: 63px;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whyRental {
+  padding: 90px 0 30px;
+}

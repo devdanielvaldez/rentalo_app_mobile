@@ -1,0 +1,179 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookingDates {
+  flex-shrink: 0;
+  /* Ensure that calendar dropdown gets some stacking context relative to other form items below */
+  z-index: 1;
+}
+
+.btnLink {
+  color: rgb(255, 121, 0);
+  cursor: pointer;
+}
+
+.bookingDates {
+
+  /* border-bottom: 3px solid red; */
+  &>div {
+    border: none;
+  }
+}
+
+.priceBreakdownContainer {
+  margin-top: 10px;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.priceBreakdownTitle {
+  color: var(--matterColorDark);
+  font: normal normal 600 18px/28px Poppins;
+  letter-spacing: 0px;
+  margin: 0 0 0 0;
+}
+
+.receipt {
+  flex-shrink: 0;
+  margin: 0 0 24px 0;
+}
+
+.error {
+  color: var(--failColor);
+  margin: 0 24px;
+  display: inline-block;
+}
+
+.spinner {
+  margin: auto;
+}
+
+.sideBarError {
+  @apply --marketplaceH4FontStyles;
+  color: var(--failColor);
+  margin: 0 24px 12px 24px;
+
+  @media (--viewportMedium) {
+    margin: 0 0 12px 0;
+  }
+}
+
+.smallPrint {
+  @apply --marketplaceTinyFontStyles;
+  color: var(--matterColorAnti);
+  text-align: center;
+  flex-shrink: 0;
+
+  @media (--viewportMedium) {
+    margin-bottom: 0px;
+  }
+
+  @media (--viewportLarge) {
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+}
+
+.submitButtonWrapper {
+  flex-shrink: 0;
+  padding: 0 24px 24px 24px;
+  width: 100%;
+
+  @media (--viewportMedium) {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.link {
+  &>a {
+    color: var(--marketplaceColorDark);
+    font-size: 16px;
+    margin: 0px 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.promoCredits {
+  &>div {
+    margin-bottom: 15px;
+
+    &>label {
+      font: normal normal normal 14px/19px Nunito;
+      letter-spacing: 0px;
+      color: #000000;
+      opacity: 1;
+      padding: 0px;
+    }
+
+    &>input,
+    &>select {
+      background-color: #FFFFFF;
+      border: 1px solid #DEDEDE;
+      border-radius: 5px;
+      width: 100%;
+      padding: 0px 15px;
+      height: 40px;
+    }
+
+    &>select {
+      background-size: 10px;
+      background-position: center right 10px;
+      cursor: pointer;
+      transition: border-color var(--transitionStyle);
+    }
+  }
+}
+
+.bookingTimeContainer {
+  display: flex;
+
+  & .bookingTime {
+    width: calc(100% / 2 - 12px);
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &>div {
+      margin-bottom: 15px;
+
+      &>label {
+        font: normal normal normal 14px/19px Nunito;
+        letter-spacing: 0px;
+        color: #000000;
+        opacity: 1;
+        padding: 0px;
+      }
+
+      &>input,
+      &>select {
+        background-color: #FFFFFF;
+        border: 1px solid #DEDEDE;
+        border-radius: 5px;
+        width: 100%;
+        padding: 0px 15px;
+        height: 40px;
+        font: normal normal normal 14px/19px Nunito;
+        letter-spacing: 0px;
+        color: #000000;
+      }
+
+      &>select {
+        background-size: 10px;
+        background-position: center right 10px;
+        cursor: pointer;
+        transition: border-color var(--transitionStyle);
+        font: normal normal normal 14px/19px Nunito;
+        letter-spacing: 0px;
+        color: #000000;
+      }
+    }
+  }
+}

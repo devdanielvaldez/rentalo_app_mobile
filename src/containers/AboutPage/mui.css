@@ -1,0 +1,12 @@
+@media screen and (max-width: 768px) {
+  .css-1xp58lo-MuiGrid-root > .MuiGrid-item {
+    padding: 0 !important;
+  }
+}
+
+/* @media screen and (min-width: 768px) {
+  .css-rxdlid-MuiGrid-root>.MuiGrid-item {
+    padding-left: 70px !important;
+    padding-top: 80px !important;
+  }
+} */

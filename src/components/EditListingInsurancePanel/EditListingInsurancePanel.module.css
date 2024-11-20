@@ -1,0 +1,90 @@
+@import '../../styles/propertySets.css';
+
+.root {
+}
+
+.title {
+  font: normal normal bold 20px/28px Nunito;
+  letter-spacing: 0px;
+  color: #000000;
+  margin: 0 0 20px 0;
+
+  @media (--viewportSmall) {
+    font: normal normal bold 24px/30px Nunito;
+  }
+
+  @media (--viewportLarge) {
+    font: normal normal bold 28px/38px Nunito;
+  }
+}
+
+.button {
+  border: none;
+  background-color: var(--marketplaceColor);
+  color: white;
+  padding: 2px 20px;
+  cursor: pointer;
+  width: 50%;
+  font-size: 14px;
+
+  &:hover {
+    background-color: var(--marketplaceColorDark);
+  }
+}
+
+.createListingSubTitle {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.imgWrapper {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.img {
+  display: block;
+  width: 350px;
+  height: auto;
+  margin-right: 20px;
+
+  @media screen and (max-width: 525px) {
+    max-width: 200px;
+  }
+}
+
+.deleteIcon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.iconWrapper {
+  align-self: flex-start;
+}
+
+.modalContainer {
+  @apply --marketplaceModalInMobileBaseStyles;
+
+
+
+  background: #fff;
+  padding: 30px;
+  margin-top: 50px;
+
+  @media (--viewportMedium) {
+    flex-basis: 576px;
+    height: 50%;
+  }
+}
+
+.btnsWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnsWrapper > button {
+  max-width: 200px;
+}

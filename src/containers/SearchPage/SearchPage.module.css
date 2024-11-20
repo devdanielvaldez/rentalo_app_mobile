@@ -1,0 +1,410 @@
+@import '../../styles/customMediaQueries.css';
+@import '../../styles/propertySets.css';
+
+.staticPageWrapper {
+  width: calc(100% - 158px);
+  margin: 0px 0px 0px 158px;
+  background-color: white;
+  padding-bottom: 50px;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 158px);
+    margin: 0px 0px 0px 158px;
+    padding-bottom: 100px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin: 0px auto !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .sideNav {
+    display: none;
+  }
+}
+
+/* Can be given to Topbar when a modal is opened
+ * so that the Topbar is not rendered on top of it.*/
+.topbarBehindModal {
+  z-index: initial;
+}
+
+.topbar {
+  @media (--viewportMedium) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* We need to raise Topbar above .container */
+    z-index: 1;
+  }
+}
+
+.pageRoot {
+  margin-top: 0;
+}
+
+.container {
+  padding: 30px 24px;
+  width: 100%;
+  height: 100%;
+
+  @media (--viewportMedium) {
+    padding: 92px 30px 30px;
+  }
+}
+.noWrapper{
+  padding: 30px 24px;
+  width: 100%;
+  height: 100%;
+
+  @media (--viewportMedium) {
+    padding: 130px 30px 30px;
+  }
+}
+
+.searchResultContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media (--viewportMedium) {
+    margin-top: 25px;
+  }
+
+  &>h2 {
+    font: normal normal bold 18px/24px Nunito;
+    letter-spacing: 0px;
+    color: #000000;
+    margin: 0 0 20px 0;
+  }
+}
+
+.error {
+  color: var(--failColor);
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.searchString {
+  /* Search string should not break on white spaces - i.e. line-break should happen before. */
+  white-space: nowrap;
+}
+
+.searchFiltersPrimary {
+  display: none;
+
+  @media (--viewportMedium) {
+    display: flex;
+    margin-bottom: 21px;
+  }
+}
+
+.searchFiltersMobile {
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+
+  @media (--viewportSmall) {
+    padding: 16px 30px;
+  }
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+}
+
+.searchFiltersPanel {
+  flex-grow: 1;
+  display: flex;
+  padding: 0 24px 24px 24px;
+
+  @media (--viewportLarge) {
+    padding: 0 36px 36px 36px;
+  }
+}
+
+.listings {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.newSearchInProgress {
+  opacity: 0.1;
+}
+
+.searchListingsPanel {
+  flex-grow: 1;
+}
+
+.mapPanel {
+  @media (--viewportMedium) {
+    /**
+     * .container is using flexbox,
+     * This specifies that mapPanel is taking 34% from the viewport width
+     */
+    flex-basis: 50%;
+
+    /* Own layout settings */
+    display: flex;
+    height: 100%;
+  }
+
+  @media (--viewportLarge) {
+    flex-basis: 37.5%;
+  }
+}
+
+.lineWrapper {
+  display: flex;
+}
+
+.sortBy {
+  margin-right: 9px;
+}
+
+.sortByMenuLabel {
+  @apply --marketplaceButtonStylesSecondary;
+  @apply --marketplaceTinyFontStyles;
+  font-weight: var(--fontWeightMedium);
+
+  height: 35px;
+  min-height: 35px;
+  margin: 0;
+  border-radius: 4px;
+  white-space: nowrap;
+  padding: 0 10px;
+
+  @media (min-width:414px) {
+    padding: 0 18px;
+  }
+}
+
+.mapWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.map {
+  width: 100%;
+  height: 100vh;
+}
+
+.Mostrando {
+  display: flex;
+  margin: 20px 0;
+  position: relative;
+  z-index: 0;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width:414px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border-bottom: 2px dashed #e9e9e9;
+    content: '';
+    width: 100%;
+    z-index: 0;
+  }
+
+  & .searchResultsText {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    background-color: var(--matterColorLight);
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width:414px) {
+      padding: 0px 30px 0 0;
+      text-align: left;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: auto;
+    }
+  }
+
+  & .clearAll {
+    cursor: pointer;
+    background-color: var(--matterColorLight);
+    color: var(--marketplaceColorLight);
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+
+    @media (min-width:414px) {
+      padding-left: 15px;
+      text-align: right;
+      margin-top: 0px;
+      width: auto;
+    }
+
+    &:hover {
+      color: var(--marketplaceColor);
+    }
+  }
+
+}
+
+
+
+.topSearchCategories {
+  display: block;
+  width: 100%;
+  padding: 0px;
+
+  @media (max-width: 991px) {
+    overflow-x: scroll;
+    display: flex;
+  }
+
+  & .categoryButton {
+    display: inline-block;
+    border: 1px solid #d8d8d8;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-bottom: 15px;
+
+    @media (max-width: 991px) {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    & .categoryButtonIcon {
+      height: 2pc;
+      margin-right: 15px;
+    }
+  }
+}
+
+.mapAndListing {
+  padding: 0px;
+  display: flex;
+  width: 100%;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+
+  & .listings {
+    width: 70%;
+
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+  }
+
+  & .mapWrapper {
+    width: 30%;
+
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+
+    & .map {
+      width: 100%;
+      height: 100vh;
+    }
+  }
+}
+
+.vehicletypeSlider {
+  width: 100%;
+  padding: 0px;
+
+  & :global(.slick-slide) {
+    padding: 0 5px;
+
+    @media (min-width:414px) {
+      padding: 0 10px;
+    }
+  }
+
+  & .categoryButtonIcon {
+    height: 24px;
+    display: inline-flex;
+    margin-right: 10px;
+
+    @media (min-width:414px) {
+      height: 30px;
+    }
+
+    @media (--viewportLarge) {
+      height: 34px;
+    }
+
+    @media (min-width:1620px) {
+      margin-right: 15px;
+    }
+  }
+
+  & .categoryButton {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #d8d8d8;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font: normal normal bold 14px/20px Nunito;
+    letter-spacing: 0px;
+    color: #000000;
+
+    @media (min-width:414px) {
+      padding: 15px;
+      font: normal normal bold 16px/20px Nunito;
+    }
+
+    @media (--viewportLarge) {
+      font: normal normal bold 18px/24px Nunito;
+      padding: 14px 20px;
+    }
+
+    @media (min-width:1800px) {
+      font: normal normal bold 20px/27px Nunito;
+    }
+  }
+}
+
+.mobile {
+  background: transparent linear-gradient(101deg, #000000F7 0%, #000000F7 52%, #14213D 100%) 0% 0% no-repeat padding-box;
+  border-radius: 0px 0px 10px 10px;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 93%;
+  align-self: center !important;
+  position: relative;
+  z-index: 1;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobileText {
+  color: white;
+  font: normal normal bold 28px/38px Nunito;
+}

@@ -1,0 +1,19 @@
+.verificationCompleteSec {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+
+  &>img {
+    max-width: 100%;
+  }
+
+  &>p {
+    display: inline-block;
+    font: normal normal 600 16px/21px Nunito;
+    letter-spacing: 0px;
+    color: var(--matterColorDark);
+  }
+}

@@ -1,0 +1,129 @@
+.nav {
+  width: var(--sidenavWidth);
+  background: #000000F7 0% 0% no-repeat padding-box;
+  box-shadow: 12px 0px 20px #0000000A;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  padding: 40px 20px;
+  height: 100vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.withoutLoginNav {
+  width: var(--sidenavWidth);
+  background: #000000F7 0% 0% no-repeat padding-box;
+  box-shadow: 12px 0px 20px #0000000A;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  padding: 40px 20px;
+  height: 100vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hr {
+  position: relative;
+  width: 86px;
+  border-bottom: 1px solid #FFFFFF30;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  margin-top: 36px;
+}
+
+.linksBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+
+  &>a {
+    color: var(--matterColorLight);
+    font-size: 15px;
+    font-family: var(--fontFamily2);
+    line-height: 20px;
+    font-weight: normal;
+    margin-bottom: 36px;
+    text-align: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  & .box {
+    background: #ffffff26 0% 0% no-repeat padding-box;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  & .userLogin {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+
+    &:hover {
+      & .user {
+        transform: scale(1.1);
+      }
+
+      & .userGetInto {
+        text-decoration: underline;
+      }
+    }
+
+    & .user {
+      background: #c3ebd926 0% 0% no-repeat padding-box;
+      border-radius: 6px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    & .userGetInto {
+      color: var(--matterColorLight);
+      font-size: 14px;
+      text-align: center;
+      font-family: var(--fontFamily2);
+      line-height: 22px;
+      font-weight: normal;
+      margin: 10px 0 0 0;
+    }
+  }
+}

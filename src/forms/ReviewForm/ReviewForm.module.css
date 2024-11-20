@@ -1,0 +1,51 @@
+.root {
+  display: flex;
+  flex-direction: column;
+
+  /* Layout: size and positioning */
+  width: 100%;
+  height: auto;
+  margin-top: 24px;
+}
+
+.error {
+  color: var(--failColor);
+}
+
+.errorPlaceholder {
+  @media (--viewportMedium) {
+    width: 100%;
+    height: 32px;
+  }
+}
+
+.reviewRating {
+  margin-bottom: 18px;
+
+  @media (--viewportMedium) {
+    margin-bottom: 16px;
+  }
+}
+
+.reviewContent {
+  flex-shrink: 0;
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  &>textarea {
+    padding: 10px 15px;
+    box-sizing: border-box;
+    height: 100px !important;
+  }
+}
+
+.submitButton {
+  margin-top: auto;
+  margin-bottom: 0;
+  flex-shrink: 0;
+
+  @media (--viewportMedium) {
+    display: inline-block;
+    width: 100%;
+  }
+}

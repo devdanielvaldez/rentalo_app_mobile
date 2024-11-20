@@ -1,0 +1,25 @@
+.addCardForm {
+  &>label {
+    font: normal normal normal 16px/24px Nunito;
+    letter-spacing: 0px;
+    color: var(--matterColorDark);
+  }
+
+  & :global(.StripeElement) {
+    padding: 10px 20px;
+    border: solid 1px var(--matterBorderColor);
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+
+  &>button {
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px 30px;
+  }
+}
+
+.error {
+  color: var(--failColor);
+  font-size: 14px;
+}

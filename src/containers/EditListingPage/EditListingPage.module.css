@@ -1,0 +1,32 @@
+@import '../../styles/customMediaQueries.css';
+
+.topbar {
+  z-index: 1;
+}
+
+.mobileTopbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--matterColorLight);
+  box-shadow: var(--boxShadow);
+  padding: 10px 24px;
+
+  @media (--viewportMedium) {
+    display: none;
+  }
+}
+
+.desktopTopbar {
+  box-shadow: none;
+
+  @media (--viewportLarge) {
+    box-shadow: var(--boxShadowLight);
+  }
+}
+
+.wizard {
+  flex-grow: 1;
+}

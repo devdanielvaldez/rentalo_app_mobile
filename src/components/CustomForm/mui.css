@@ -1,0 +1,21 @@
+@media screen and (max-width: 768px) {
+  .css-55z43a-MuiGrid-root {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .css-1cank2v-MuiGrid-root {
+    margin: 0 !important;
+  }
+  .css-55z43a-MuiGrid-root > .MuiGrid-item {
+    padding-left: 0 !important;
+  }
+  .css-55z43a-MuiGrid-root > .MuiGrid-item {
+    padding-top: 0 !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .css-12fx2no {
+    margin-left: 30px !important;
+  }
+}

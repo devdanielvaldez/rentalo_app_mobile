@@ -1,0 +1,8 @@
+{
+  "reactIntlHelper.translationFiles": [
+    "/src/translations/de.json",
+    "/src/translations/en.json",
+    "/src/translations/es.json",
+    "/src/translations/fr.json"
+  ]
+}

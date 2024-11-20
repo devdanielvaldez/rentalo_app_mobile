@@ -1,0 +1,132 @@
+@import '../../styles/customMediaQueries.css';
+@import '../../styles/propertySets.css';
+
+.pageTitle {
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .sideNav {
+    display: none;
+  }
+}
+
+.staticPageWrapper {
+  width: calc(100% - 48px);
+  max-width: 1056px;
+  margin: 0px auto;
+  margin-bottom: 7pc;
+
+  @media (--viewportMedium) {
+    width: calc(100% - 72px);
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width: 900px) {
+    margin-top: 1pc;
+  }
+
+  @media (max-width: 1020px) and (min-width: 767px) {
+    margin-left: var(--sidenavWidth);
+  }
+}
+
+.contentWrapper {
+  width: 100%;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 20px #0000000d;
+  border-radius: 15px;
+  padding: 20px;
+  /* flex-wrap: wrap;
+
+  @media (--viewportMedium) {
+    flex-wrap: nowrap;
+  } */
+}
+
+.referralCode {
+  background-color: rgb(202, 202, 202);
+  padding: 0 8px;
+  border-radius: 4px;
+  word-wrap: break-word;
+}
+
+.sendEmailWrapper {
+  display: flex;
+  height: 2.5pc;
+  width: 60%;
+
+  @media only screen and (max-width: 950px) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.sendEmailInput {
+  margin-right: 3pc;
+  border: 1px solid gray;
+  padding-left: 5px;
+
+  @media only screen and (max-width: 950px) {
+    margin-bottom: 2pc;
+  }
+}
+
+.sendButton {
+  height: 2pc;
+  min-height: 2.5pc;
+  width: 8pc;
+  background: var(--marketplaceColorDark) 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+
+  @media only screen and (max-width: 950px) {
+    height: 6pc;
+  }
+}
+
+.successText {
+  color: rgb(20, 206, 20);
+
+  @media only screen and (max-width: 950px) {
+    margin-top: 7pc;
+  }
+}
+
+.errorText {
+  color: red;
+
+  @media only screen and (max-width: 950px) {
+    margin-top: 7pc;
+  }
+}
+
+.infoText {
+  font-size: 14px;
+  line-height: 19px;
+
+  @media only screen and (max-width: 950px) {
+    margin-top: 7pc;
+  }
+}
+
+.cohostAvatar {
+  background-color: rgb(236, 236, 236);
+  width: 8pc;
+  height: 8pc;
+  border-radius: 100%;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid grey;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.cohostName {
+  display: block;
+}
+
+.aTagWrapper {
+  max-width: 8pc;
+}

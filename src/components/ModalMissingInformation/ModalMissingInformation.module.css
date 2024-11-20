@@ -1,0 +1,78 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  /* Adding empty .root class to enforce className overwrite */
+}
+
+/* Title of the modal */
+.modalTitle {
+  font: normal normal 300 25px/30px Poppins;
+  letter-spacing: 0px;
+  color: #000000;
+  margin: 0 0 20px 0;
+
+  @media (--viewportMedium) {
+    font: normal normal 300 30px/40px Poppins;
+    margin: 0 0 30px 0;
+  }
+}
+
+/* Paragraph for the Modal */
+.modalMessage {
+  font: normal normal normal 16px/22px Nunito;
+  letter-spacing: 0px;
+  color: #7A7A7A;
+  margin: 0 0 20px 0;
+
+  @media (--viewportMedium) {
+    margin: 0 0 30px 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+/* Make the email pop */
+.email {
+  font-weight: var(--fontWeightHighlightEmail);
+  color: #000000;
+}
+
+.helperLink {
+  @apply --marketplaceLinkStyles;
+  @apply --marketplaceModalHelperLink;
+}
+
+.helperText {
+  @apply --marketplaceModalHelperText;
+  font: normal normal normal 14px/20px Nunito;
+  letter-spacing: 0px;
+  color: #7A7A7A;
+  margin: 0 0 5px 0;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.error {
+  @apply --marketplaceModalErrorStyles;
+}
+
+.bottomWrapper {
+  @apply --marketplaceModalBottomWrapper;
+
+  margin-top: 30px;
+
+  /* Align the helper links to the left since there isn't a Primary Button anymore */
+  text-align: left;
+}
+
+.modalIcon {
+  @apply --marketplaceModalIconStyles;
+}
+
+.reminderModalLinkButton {
+  @apply --marketplaceButtonStylesPrimary;
+}

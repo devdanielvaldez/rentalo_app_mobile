@@ -1,0 +1,8 @@
+{
+    "appId": "app.rentalo.oficial",
+    "appName": "Rentalo",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "build",
+    "cordova": {}
+  }

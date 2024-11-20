@@ -1,0 +1,210 @@
+@import '../../styles/propertySets.css';
+
+/* Content is visible as modal layer */
+.isOpen {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  /* scrollLayer is the .root for the Modal */
+  & .scrollLayer {
+    @apply --marketplaceModalRootStyles;
+
+    /* Add default background color to avoid bouncing scroll showing the
+   page contents from behind the modal. */
+
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: none;
+    /* Additional styles for the modal window, dimming the background and positioning the modal */
+    min-height: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @media (--viewportMedium) {}
+  }
+
+  & .container {
+    @apply --marketplaceModalBaseStyles;
+    flex-basis: 576px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 18px #0000003d;
+    border-radius: 20px;
+
+    @media (--viewportMedium) {}
+  }
+
+  & .otpModalContainer {
+    background-color: #000;
+    @apply --marketplaceModalBaseStyles;
+    flex-basis: 576px;
+    box-shadow: 0px 0px 18px #0000003d;
+    border-radius: 20px;
+
+    & .close {
+      &:hover {
+        color: #dad4d4;
+      }
+    }
+  }
+}
+
+.otpCloseButton {
+  & img {
+    width: 20px;
+  }
+}
+
+.largeModal {
+  & .scrollLayer {
+    & .container {
+      @media (--viewportMedium) {
+        flex-basis: 1000px;
+        max-width: 95%;
+      }
+    }
+  }
+}
+
+.mobileMenuModal {
+
+  & .scrollLayer {
+    & .container {
+      border-radius: 0;
+      flex-basis: 100%;
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.otpCloseButton {
+  width: 35px;
+  height: 35px;
+
+  & svg {
+    width: 20px;
+    height: 20px;
+
+    & rect {
+      fill: black;
+    }
+  }
+}
+
+.content {
+  &>p {
+    margin: 0 0 15px 0;
+    font: normal normal normal 16px/25px Nunito;
+    letter-spacing: 0px;
+    color: #919191;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Content is explicitly hidden (this default can be overridden with passed-in class) */
+/* The use case for having both .isOpen and .isClosed is ModalInMobile use case       */
+/* where desktop layout should not get any styling from Modal component.              */
+.isClosed {
+  display: none;
+}
+
+.close {
+  @apply --marketplaceModalCloseStyles;
+}
+
+.closeText {
+  @apply --marketplaceModalCloseText;
+}
+
+.closeIcon {
+  @apply --marketplaceModalCloseIcon;
+}
+
+.closeLight {
+  color: var(--matterColorAnti);
+  transition: var(--transitionStyleButton);
+
+  &:enabled:hover,
+  &:enabled:active {
+    color: var(--matterColorLight);
+  }
+}
+
+.focusedDiv {
+  &:focus {
+    outline: none;
+  }
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  &>h1 {
+    font: normal normal 300 25px/34px Poppins;
+    letter-spacing: 0px;
+    color: var(--matterColorDark);
+    margin: 0;
+
+    @media (--viewportSmall) {
+      font: normal normal 300 30px/43px Poppins;
+    }
+
+    @media (--viewportMedium) {
+      font: normal normal 300 35px/53px Poppins;
+    }
+
+    &.bookingModalTitle {
+      font: normal normal 600 18px/28px Poppins;
+      letter-spacing: 0px;
+      color: var(--matterColorDark);
+      margin: 0;
+      /* text-align: center; */
+      width: 100%;
+    }
+  }
+}
+
+.missingInfoModal {
+  & .scrollLayer {
+    & .focusedDiv {
+      background-color: var(--matterColorLight);
+      box-shadow: 0px 0px 18px #0000003D;
+      border-radius: 20px;
+    }
+  }
+}
+
+.extendTripModalOpen {
+  & .scrollLayer {
+    & .scrollLayer {
+      background-color: transparent;
+      overflow: visible;
+
+      & .modalHeader {
+        display: none;
+      }
+    }
+  }
+}
+
+.bookingModal {
+
+  & .scrollLayer {
+    @media (max-width:767px) {
+      background-color: var(--matterColorLight);
+    }
+  }
+}

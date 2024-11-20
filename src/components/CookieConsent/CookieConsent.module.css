@@ -1,0 +1,95 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  /* Fixed in the center */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+  /* Dimensions */
+  width: 90vw;
+  max-width: 400px;
+  padding: 20px;
+
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Colors */
+  background-color: #ff7900;
+  color: #000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  /* Animation */
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.message {
+  @apply --marketplaceH5FontStyles;
+  margin-bottom: 16px;
+  font-size: 16px;
+  text-align: center;
+  color: #000;
+}
+
+.cookieLink {
+  color: var(--matterColorLight);
+  border-bottom: 1px solid var(--matterColorNegative);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.continueBtn {
+  /* Font */
+  @apply --marketplaceH5FontStyles;
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 16px;
+
+  /* Dimensions */
+  padding: 8px 20px;
+  margin-top: 12px;
+
+  background-color: transparent;
+  border: solid 1px #000;
+  border-radius: 4px;
+  cursor: pointer;
+  color: aliceblue;
+
+  transition: var(--transitionStyleButton);
+
+  &:hover {
+    background-color: var(--matterColorNegative);
+    border: solid 1px var(--matterColorNegative);
+    color: var(--matterColorDark);
+    transition: var(--transitionStyleButton);
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}

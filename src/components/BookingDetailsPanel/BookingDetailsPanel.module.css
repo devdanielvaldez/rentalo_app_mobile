@@ -1,0 +1,60 @@
+.beforeImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.beforeImages img {
+  width: 47%;
+  height: 50%;
+}
+
+.bookingsDetailsContainer {
+  &>h1 {
+    font: normal normal 800 24px/24px Nunito;
+    letter-spacing: 0;
+    color: var(--matterColorDark);
+    margin: 0 0 15px;
+  }
+
+  & .dashboardSection {
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 30px;
+    max-height: 500px;
+
+
+    &>table {
+      width: 100%;
+      border: solid 1px var(--matterBorderColor);
+      height: 100%;
+
+      &>thead {
+        &>tr {
+          &>th {
+            background-color: var(--matterBorderColor);
+            border-bottom: solid 1px var(--matterBorderColor);
+            color: var(--matterColorDark);
+            font: normal normal 600 16px/20px Nunito;
+            padding: 15px 20px;
+            text-align: left;
+          }
+        }
+      }
+
+      &>tbody {
+        &>tr {
+
+          &>td {
+            background-color: var(--matterColorLight);
+            border-bottom: solid 1px var(--matterBorderColor);
+            color: var(--matterColor);
+            font: normal normal 400 16px/20px Nunito;
+            padding: 15px 20px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}

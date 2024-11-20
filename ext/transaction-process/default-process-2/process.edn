@@ -1,0 +1,533 @@
+{:format :v3,
+ :transitions
+ [{:name :transition/enquire,
+   :actor :actor.role/customer,
+   :actions [],
+   :to :state/enquiry}
+  {:name :transition/request-payment,
+   :actor :actor.role/customer,
+   :privileged? true,
+   :actions
+   [{:name :action/create-booking,
+     :config {:observe-availability? true}}
+    {:name :action/privileged-set-line-items}
+    {:name :action/privileged-update-metadata}],
+   :to :state/preauthorized}
+  
+  {:name :transition/request-payment-instant,
+   :actor :actor.role/customer,
+   :privileged? true,
+   :actions
+   [{:name :action/create-booking,
+     :config {:observe-availability? true}}
+    {:name :action/accept-booking}
+    {:name :action/privileged-set-line-items}
+    {:name :action/privileged-update-metadata}],
+   :to :state/accepted}
+  
+  {:name :transition/request-payment-after-enquiry-instant,
+   :actor :actor.role/customer,
+   :privileged? true,
+   :actions
+   [{:name :action/create-booking,
+     :config {:observe-availability? true}}
+    {:name :action/accept-booking}
+    {:name :action/privileged-set-line-items}],
+   :from :state/enquiry,
+   :to :state/accepted}
+  
+  {:name :transition/request-payment-after-enquiry,
+   :actor :actor.role/customer,
+   :privileged? true,
+   :actions
+   [{:name :action/create-booking,
+     :config {:observe-availability? true}}
+    {:name :action/privileged-set-line-items}],
+    :from :state/enquiry,
+    :to :state/preauthorized}
+  
+  {:name :transition/accept,
+   :actor :actor.role/provider,
+   :actions [{:name :action/accept-booking}],
+   :from :state/preauthorized,
+   :to :state/accepted}
+  
+  {:name :transition/decline,
+   :actor :actor.role/provider,
+   :actions [{:name :action/calculate-full-refund},
+   {:name :action/cancel-booking}],
+   :from :state/preauthorized,
+   :to :state/declined}
+  
+  {:name :transition/decline-by-provider-after-accept,
+   :actor :actor.role/provider,
+   :actions 
+   [{:name :action/update-protected-data},
+   {:name :action/calculate-full-refund}, 
+   {:name  :action/cancel-booking}],
+   :from :state/accepted,
+   :to :state/declined}
+   
+  ;; {:name :transition/decline-by-provider-after-verify,
+  ;;  :actor :actor.role/provider,
+  ;;  :actions
+  ;;  [{:name :action/update-protected-data},
+  ;;   {:name :action/cancel-booking}],
+  ;;  :from :state/reverify,
+  ;;  :to :state/cancelled}
+
+  {:name :transition/decline-by-provider-after-upload-car-photo,
+   :actor :actor.role/provider,
+   :actions
+   [{:name :action/update-protected-data},
+    {:name :action/cancel-booking}],
+   :from :state/customer-photo-upload,
+   :to :state/cancelled}
+
+  ;; {:name :transition/decline-by-provider-after-waiting-customer-sign,
+  ;;  :actor :actor.role/provider,
+  ;;  :actions
+  ;;  [{:name :action/update-protected-data},
+  ;;   {:name :action/cancel-booking}],
+  ;;  :from :state/waiting-for-customer-signature,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/decline-by-provider-after-customer-sign,
+  ;;  :actor :actor.role/provider,
+  ;;  :actions
+  ;;  [{:name :action/update-protected-data},
+  ;;   {:name :action/cancel-booking}],
+  ;;  :from :state/signed-by-customer,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/decline-by-provider-after-waiting-for-provider-signature,
+  ;;  :actor :actor.role/provider,
+  ;;  :actions
+  ;;  [{:name :action/update-protected-data},
+  ;;   {:name :action/cancel-booking}],
+  ;;  :from :state/waiting-for-provider-signature,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/decline-by-provider-after-signed-by-provider,
+  ;;  :actor :actor.role/provider,
+  ;;  :actions
+  ;;  [{:name :action/update-protected-data},
+  ;;   {:name :action/cancel-booking}],
+  ;;  :from :state/signed-by-provider,
+  ;;  :to :state/cancelled}  
+
+  ;; {:name :transition/reverify,
+  ;;  :actor :actor.role/operator,
+  ;;  :actions [{:name :action/update-protected-data}],
+  ;;  :from :state/accepted,
+  ;;  :to :state/reverify}
+
+  {:name :transition/upload-car-photo,
+   :actor :actor.role/customer,
+      :privileged? true,
+   :actions [{:name :action/update-protected-data},
+    {:name :action/privileged-update-metadata}],
+   :from :state/accepted,
+   :to :state/customer-photo-upload}
+
+  ;; {:name :transition/waiting-for-customer-signature,
+  ;;  :at {:fn/timepoint [:time/booking-start]},
+  ;;  :actions [{:name :action/update-protected-data}],
+  ;;  :from :state/customer-photo-upload,
+  ;;  :to :state/waiting-for-customer-signature}
+   
+  ;; {:name :transition/signed-by-customer,
+  ;;  :actor :actor.role/operator,
+  ;;  :actions [{:name :action/update-protected-data}],
+  ;;  :from :state/waiting-for-customer-signature
+  ;;  :to :state/signed-by-customer}
+
+  ;; {:name :transition/waiting-for-provider-signature,
+  ;;  :at {:fn/timepoint [:time/first-entered-state :state/signed-by-customer]}
+  ;;  :actions [{:name :action/update-protected-data}],
+  ;;  :from :state/signed-by-customer,
+  ;;  :to :state/waiting-for-provider-signature}
+
+  ;; {:name :transition/signed-by-provider,
+  ;;  :actor :actor.role/operator,
+  ;;  :actions [{:name :action/update-protected-data}],
+  ;;  :from :state/waiting-for-provider-signature
+  ;;  :to :state/signed-by-provider}
+   
+  {:name :transition/extend-by-customer,
+   :actor :actor.role/customer,
+   :actions
+   [{:name :action/update-protected-data}],
+   :from :state/customer-photo-upload,
+   :to :state/customer-photo-upload}
+
+  {:name :transition/accept-extend-trip,
+   :actor :actor.role/provider,
+   :actions
+   [{:name :action/update-booking}],
+   :from :state/customer-photo-upload,
+   :to :state/customer-photo-upload}
+
+  {:name :transition/decline-extend-trip,
+   :actor :actor.role/provider,
+   :actions [{:name :action/cancel-booking}],
+   :from :state/customer-photo-upload
+   :to :state/customer-photo-upload}
+
+  {:name :transition/complete,
+   :at {:fn/timepoint [:time/booking-end]},
+   :actions [],
+   :from :state/customer-photo-upload,
+   :to :state/delivered}
+
+  {:name :transition/customer-full-refund,
+   :actor :actor.role/customer,
+   :actions
+   [{:name :action/cancel-booking}
+    {:name :action/calculate-full-refund}],
+   :from :state/accepted,
+   :to :state/cancelled}
+
+  ;; {:name :transition/customer-full-refund-after-verify,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/reverify,
+  ;;  :to :state/cancelled}
+
+  {:name :transition/customer-full-refund-after-upload-car-photo,
+   :actor :actor.role/customer,
+   :actions
+   [{:name :action/cancel-booking}
+    {:name :action/calculate-full-refund}],
+   :from :state/customer-photo-upload,
+   :to :state/cancelled}
+
+  ;; {:name :transition/customer-full-refund-after-waiting-customer-sign,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/waiting-for-customer-signature,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/customer-full-refund-after-customer-sign,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/signed-by-customer,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/customer-full-refund-after-waiting-for-provider-signature,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/waiting-for-provider-signature,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/customer-full-refund-after-signed-by-provider,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/signed-by-provider,
+  ;;  :to :state/cancelled}
+
+  {:name :transition/customer-half-refund,
+   :actor :actor.role/customer,
+   :actions
+   [{:name :action/cancel-booking}],
+   :from :state/accepted,
+   :to :state/cancelled}
+
+  ;; {:name :transition/customer-half-refund-after-verify,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/reverify,
+  ;;  :to :state/cancelled}
+
+  {:name :transition/customer-half-refund-after-upload-car-photo,
+   :actor :actor.role/customer,
+   :actions
+   [{:name :action/cancel-booking}
+    {:name :action/calculate-full-refund}],
+   :from :state/customer-photo-upload,
+   :to :state/cancelled}
+
+  ;; {:name :transition/customer-half-refund-after-waiting-customer-sign,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/waiting-for-customer-signature,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/customer-half-refund-after-customer-sign,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/signed-by-customer,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/customer-half-refund-after-waiting-for-provider-signature,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/waiting-for-provider-signature,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/customer-half-refund-after-signed-by-provider,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/signed-by-provider,
+  ;;  :to :state/cancelled}
+
+  {:name :transition/customer-no-refund,
+   :actor :actor.role/customer,
+   :actions
+   [{:name :action/cancel-booking}],
+   :from :state/accepted,
+   :to :state/cancelled}
+
+  ;; {:name :transition/customer-no-refund-after-verify,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/reverify,
+  ;;  :to :state/cancelled}
+
+  {:name :transition/customer-no-refund-after-upload-car-photo,
+   :actor :actor.role/customer,
+   :actions
+   [{:name :action/cancel-booking}
+    {:name :action/calculate-full-refund}],
+   :from :state/customer-photo-upload,
+   :to :state/cancelled}
+
+  ;; {:name :transition/customer-no-refund-after-waiting-customer-sign,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/waiting-for-customer-signature,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/customer-no-refund-after-customer-sign,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/signed-by-customer,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/customer-no-refund-after-waiting-for-provider-signature,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/waiting-for-provider-signature,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/customer-no-refund-after-signed-by-provider,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/cancel-booking}
+  ;;   {:name :action/calculate-full-refund}],
+  ;;  :from :state/signed-by-provider,
+  ;;  :to :state/cancelled}
+
+  {:name :transition/charge-customer,
+   :actor :actor.role/customer,
+   :actions
+   [{:name :action/update-protected-data},
+    {:name :action/cancel-booking}],
+   :from :state/accepted,
+   :to :state/cancelled}
+
+  ;; {:name :transition/charge-after-verify,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/update-protected-data},
+  ;;   {:name :action/cancel-booking}],
+  ;;  :from :state/reverify,
+  ;;  :to :state/cancelled}
+
+  {:name :transition/charge-after-upload-car-photo,
+   :actor :actor.role/customer,
+   :actions
+   [{:name :action/update-protected-data},
+    {:name :action/cancel-booking}],
+   :from :state/customer-photo-upload,
+   :to :state/cancelled}
+
+  ;; {:name :transition/charge-after-waiting-customer-sign,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/update-protected-data},
+  ;;   {:name :action/cancel-booking}],
+  ;;  :from :state/waiting-for-customer-signature,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/charge-after-customer-sign,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/update-protected-data},
+  ;;   {:name :action/cancel-booking}],
+  ;;  :from :state/signed-by-customer,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/charge-after-waiting-for-provider-signature,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/update-protected-data},
+  ;;   {:name :action/cancel-booking}],
+  ;;  :from :state/waiting-for-provider-signature,
+  ;;  :to :state/cancelled}
+
+  ;; {:name :transition/charge-after-signed-by-provider,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/update-protected-data},
+  ;;   {:name :action/cancel-booking}],
+  ;;  :from :state/signed-by-provider,
+  ;;  :to :state/cancelled}
+
+  {:name :transition/expire,
+   :at
+   {:fn/min
+    [{:fn/plus
+      [{:fn/timepoint [:time/first-entered-state :state/preauthorized]}
+       {:fn/period ["P6D"]}]}
+     {:fn/plus
+      [{:fn/timepoint [:time/booking-end]} {:fn/period ["P1D"]}]}]},
+   :actions [{:name :action/calculate-full-refund}],
+   :from :state/preauthorized,
+   :to :state/declined}
+
+  {:name :transition/cancel,
+   :actor :actor.role/operator,
+   :actions [{:name :action/calculate-full-refund}],
+   :from :state/accepted,
+   :to :state/cancelled}
+
+  {:name :transition/review-1-by-provider,
+   :actor :actor.role/provider,
+   :actions [{:name :action/post-review-by-provider}],
+   :from :state/delivered,
+   :to :state/reviewed-by-provider}
+
+  ;; {:name :transition/review-2-by-provider,
+  ;;  :actor :actor.role/provider,
+  ;;  :actions
+  ;;  [{:name :action/post-review-by-provider}
+  ;;   {:name :action/publish-reviews}],
+  ;;  :from :state/reviewed-by-customer,
+  ;;  :to :state/reviewed}
+  ;; {:name :transition/review-1-by-customer,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions [{:name :action/post-review-by-customer}],
+  ;;  :from :state/delivered,
+  ;;  :to :state/reviewed-by-customer}
+  ;; {:name :transition/review-2-by-customer,
+  ;;  :actor :actor.role/customer,
+  ;;  :actions
+  ;;  [{:name :action/post-review-by-customer}
+  ;;   {:name :action/publish-reviews}],
+  ;;  :from :state/reviewed-by-provider,
+  ;;  :to :state/reviewed}
+  {:name :transition/expire-review-period,
+   :at
+   {:fn/plus
+    [{:fn/timepoint [:time/booking-end]} {:fn/period ["P7D"]}]},
+   :actions [],
+   :from :state/delivered,
+   :to :state/reviewed}
+  ;; {:name :transition/expire-provider-review-period,
+  ;;  :at
+  ;;  {:fn/plus
+  ;;   [{:fn/timepoint [:time/booking-end]} {:fn/period ["P7D"]}]},
+  ;;  :actions [{:name :action/publish-reviews}],
+  ;;  :from :state/reviewed-by-customer,
+  ;;  :to :state/reviewed}
+  {:name :transition/expire-customer-review-period,
+   :at
+   {:fn/plus
+    [{:fn/timepoint [:time/booking-end]} {:fn/period ["P7D"]}]},
+   :actions [{:name :action/publish-reviews}],
+   :from :state/reviewed-by-provider,
+   :to :state/reviewed}],
+
+
+  :notifications
+ [{:name :notification/new-booking-request,
+   :on :transition/request-payment,
+   :to :actor.role/provider,
+   :template :new-booking-request}
+  ;; {:name :notification/waiting-for-customer-signature,
+  ;;  :on :transition/signed-by-customer,
+  ;;  :to :actor.role/customer,
+  ;;  :template :waiting-for-customer-signature}
+  ;; {:name :notification/signed-by-provider,
+  ;;  :on :transition/signed-by-provider,
+  ;;  :to :actor.role/customer,
+  ;;  :template :signed-by-provider}
+
+  ;; {:name :notification/signed-by-customer,
+  ;;  :on :transition/signed-by-customer,
+  ;;  :to :actor.role/provider,
+  ;;  :template :signed-by-customer}
+
+  {:name :notification/booking-request-accepted,
+   :on :transition/accept,
+   :to :actor.role/customer,
+   :template :booking-request-accepted}
+  {:name :notification/booking-request-declined,
+   :on :transition/decline,
+   :to :actor.role/customer,
+   :template :booking-request-declined}
+  {:name :notification/booking-request-auto-declined,
+   :on :transition/expire,
+   :to :actor.role/customer,
+   :template :booking-request-auto-declined}
+  {:name :notification/money-paid,
+   :on :transition/complete,
+   :to :actor.role/provider,
+   :template :money-paid}
+  {:name :notification/review-period-start-provider,
+   :on :transition/complete,
+   :to :actor.role/provider,
+   :template :review-by-provider-wanted}
+  {:name :notification/review-period-start-customer,
+   :on :transition/complete,
+   :to :actor.role/customer,
+   :template :review-by-customer-wanted}
+  ;; {:name :notification/review-by-provider-first,
+  ;;  :on :transition/review-1-by-provider,
+  ;;  :to :actor.role/customer,
+  ;;  :template :review-by-other-party-unpublished}
+  ;; {:name :notification/review-by-customer-first,
+  ;;  :on :transition/review-1-by-customer,
+  ;;  :to :actor.role/provider,
+  ;;  :template :review-by-other-party-unpublished}
+  ;; {:name :notification/review-by-provider-second,
+  ;;  :on :transition/review-2-by-provider,
+  ;;  :to :actor.role/customer,
+  ;;  :template :review-by-other-party-published}
+  ;; {:name :notification/review-by-customer-second,
+  ;;  :on :transition/review-2-by-customer,
+  ;;  :to :actor.role/provider,
+  ;;  :template :review-by-other-party-published}
+   
+   ]
+   
+   }

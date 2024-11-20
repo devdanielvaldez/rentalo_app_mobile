@@ -1,0 +1,27 @@
+@media screen and (max-width: 768px) {
+  .MuiTypography-root {
+    max-width: 100%;
+    font-size: small !important;
+    text-align: left;
+  }
+}
+
+.css-w6igdc-MuiPaper-root-MuiAccordion-root:before {
+  display: none !important;
+}
+
+.css-5fhwvt-MuiPaper-root-MuiAccordion-root::before {
+  display: none !important;
+}
+
+.css-hzn0oj-MuiPaper-root-MuiAccordion-root::before {
+  display: none !important;
+}
+
+.MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiAccordion-root MuiAccordion-rounded MuiAccordion-gutters css-1cfygod {
+  display: none !important;
+}
+
+.css-1dym4vl-MuiPaper-root-MuiAccordion-root:before {
+  position: relative !important;
+}

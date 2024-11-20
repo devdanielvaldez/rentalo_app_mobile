@@ -1,0 +1,9 @@
+.rowBox{
+    padding: 50px 20px;
+    &>select{
+        margin-bottom: 20px;
+    }
+    &> button{
+        margin-top:30px;
+    }
+}

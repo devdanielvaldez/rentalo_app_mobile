@@ -1,0 +1,44 @@
+.select {
+  display: block;
+  z-index: 999 !important;
+  width: 31.5pc;
+}
+
+.sectionWrapper {
+  margin: 0 auto;
+  width: 60vw;
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+    padding: 0 1pc;
+  }
+}
+
+.field {
+  display: flex;
+  width: 100%;
+  margin-top: 2pc;
+}
+
+.field > div {
+  width: 100%;
+}
+
+.label {
+  width: 10pc;
+  margin: auto 0;
+  margin-right: 4pc;
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 21px;
+}
+
+.aproxAmountLabel {
+  margin: auto 0;
+  font-weight: var(--fontWeightSemiBold);
+  font-size: 21px;
+  color: var(--marketplaceColor);
+  margin-left: -2.5pc;
+}
+
+.slider {
+  color: var(--marketplaceColor) !important;
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Por favor, responde a una solicitud de {{customer.display-name}}.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <style type="text/css">
+      table,
+      td,
+      div,
+      h1,
+      p {
+        font-family: 'Poppins', sans-serif;
+      }
+
+      @media screen and (max-width: 1920px) {
+        .col-sml {
+          max-width: 42% !important;
+        }
+
+        .col-lge {
+          max-width: 57% !important;
+        }
+
+        .mainContainer {
+          max-width: 680px;
+          width: 100%;
+          box-sizing: border-box;
+          margin: 20px auto;
+          padding: 36px 64px;
+          border: 1px solid #d1d1d1;
+        }
+
+        .mainContainerInner {
+          padding: 0px;
+          max-width: 100%;
+        }
+
+        .headerCon {
+          width: 100%;
+          padding: 0px;
+        }
+
+        .buttonFullWidth {
+          width: fit-content;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .col-lge {
+          max-width: 100% !important;
+          margin-top: 24px;
+        }
+
+        .mainContainer {
+          max-width: 100%;
+          width: 100%;
+          margin: 0px auto;
+          padding: 26px 34px 0;
+          border: 0px solid;
+          display: table-cell;
+        }
+
+        .headerCon {
+          border: 0px solid #d1d1d1;
+          border-radius: 0px;
+          padding: 0;
+          width: 100%;
+        }
+
+        .buttonFullWidth {
+          width: fit-content;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .col-lge {
+          max-width: 100% !important;
+          margin-top: 24px;
+        }
+
+        .buttonFullWidth {
+          width: 100%;
+        }
+
+        .mainContainer {
+          max-width: 100%;
+          margin: 0;
+          width: 100%;
+          padding: 39px 0px 24px;
+        }
+
+        .mainContainerInner {
+          max-width: 100%;
+          width: 100%;
+          margin: 0px auto;
+          padding: 0px 20px 0px;
+          border: 0px solid;
+          display: table-cell;
+        }
+
+        .headerCon {
+          border: 0px solid #d1d1d1;
+          border-radius: 0px;
+          padding: 0px;
+          width: 100%;
+        }
+
+        button {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    style="font-size:16px;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;color:#0a0a0a;font-family: 'Poppins', sans-serif;font-weight:normal;padding:0;margin:0;text-align:left;font-size:16px;line-height:19px;width:100% !important;"
+  >
+    {{#with transaction}}
+    <div class="mainContainer">
+      <div class="mainContainerInner">
+        <header
+          style="text-align:center;margin-bottom:24px;display: flex;justify-content: flex-start; flex-direction: row;align-items: center;"
+        >
+          <a href="{{ marketplace.url }}" style="color:#0286FF;text-decoration:none;">
+            <img class="logoIcon" src="{{ marketplace.url }}/static/icons/logo.png" />
+          </a>
+        </header>
+        <div class="headerCon" style=" margin:38px 0 0 0;">
+          <div>
+            <h5
+              style="font-family: 'Poppins', sans-serif;font-style: normal;font-weight: 600;font-size: 18px;line-height: 100%;letter-spacing: -0.04em;margin:0;color: #000000;"
+            >
+              ¡Buenas noticias! {{customer.display-name}} acaba de solicitar reservar
+              {{listing.title}} desde {{> format-date date=booking.start}} hasta {{> format-date
+              date=booking.end}}. Aquí está el desglose.
+            </h5>
+
+            <div style="margin-top: 22px;">
+              <br /><br />
+              <table>
+                <thead>
+                  <tr>
+                    <th style="text-align: left;">Pago</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each tx-line-items}} {{#contains include-for "provider"}} {{#eq "line-item/day"
+                  code}}
+                  <tr>
+                    <td>Precio por día</td>
+                    <td style="text-align: right; padding-left: 20px">
+                      {{> format-money money=unit-price}}
+                    </td>
+                  </tr>
+                  {{#if seats}}
+                  <tr>
+                    <td>Días</td>
+                    <td style="text-align: right; padding-left: 20px">× {{number units}}</td>
+                  </tr>
+                  <tr>
+                    <td>Asientos</td>
+                    <td style="text-align: right; padding-left: 20px">× {{number seats}}</td>
+                  </tr>
+                  {{else}}
+                  <tr>
+                    <td>Días</td>
+                    <td style="text-align: right; padding-left: 20px">× {{number quantity}}</td>
+                  </tr>
+                  {{/if}}
+                  <tr>
+                    <th style="text-align: left;">Subtotal</th>
+                    <th style="text-align: right; padding-left: 20px">
+                      {{> format-money money=line-total}}
+                    </th>
+                  </tr>
+                  {{/eq}} {{#eq "line-item/night" code}}
+                  <tr>
+                    <td>Precio por noche</td>
+                    <td style="text-align: right; padding-left: 20px">
+                      {{> format-money money=unit-price}}
+                    </td>
+                  </tr>
+                  {{#if seats}}
+                  <tr>
+                    <td>Días</td>
+                    <td style="text-align: right; padding-left: 20px">× {{number units}}</td>
+                  </tr>
+                  <tr>
+                    <td>Asientos</td>
+                    <td style="text-align: right; padding-left: 20px">× {{number seats}}</td>
+                  </tr>
+                  {{else}}
+                  <tr>
+                    <td>Días</td>
+                    <td style="text-align: right; padding-left: 20px">× {{number quantity}}</td>
+                  </tr>
+                  {{/if}}
+                  <tr>
+                    <th style="text-align: left;">Subtotal</th>
+                    <th style="text-align: right; padding-left: 20px">
+                      {{> format-money money=line-total}}
+                    </th>
+                  </tr>
+                  {{/eq}} {{#eq "line-item/provider-commission" code}}
+                  <tr>
+                    <td>Comisión de {{marketplace.name}}</td>
+                    <td style="text-align: right; padding-left: 20px;">
+                      {{> format-money money=line-total}}
+                    </td>
+                  </tr>
+                  {{/eq}} {{/contains}} {{/each}}
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th style="text-align: left;">Ganancias</th>
+                    <th style="text-align: left; padding-left: 20px;">
+                      {{> format-money money=payout-total}}
+                    </th>
+                  </tr>
+                </tfoot>
+              </table>
+              <br /><br />
+              <p
+                style="font-family: 'Poppins', sans-serif; font-style: normal;font-weight: normal;font-size: 17px;line-height: 140%;letter-spacing: -0.04em; margin:0 0 20px 0;color: #7A7A7A;display: inline-block;width: 100%;"
+              >
+                <span style="color:#000000;"
+                  >Debes aceptar la solicitud antes del {{> format-date
+                  date=delayed-transition.run-at}}. De lo contrario, la solicitud expirará y no
+                  recibirás el pago. Si las fechas reservadas no te funcionan, también puedes optar
+                  por rechazar la solicitud.</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/with}}
+    <hr />
+    <p>
+      Has recibido esta notificación por correo electrónico porque eres miembro de
+      {{marketplace.name}}. Si ya no deseas recibir estos correos electrónicos, por favor contacta
+      al equipo de {{marketplace.name}}.
+    </p>
+  </body>
+</html>

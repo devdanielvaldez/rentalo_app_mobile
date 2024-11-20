@@ -1,0 +1,34 @@
+@media screen and (max-width: 768px) {
+  .css-137v0wv-MuiGrid-root {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    max-height: 110px;
+    text-align: center;
+  }
+  .css-sor6pw {
+    /* text-align: center; */
+    justify-content: center;
+  }
+  .css-1pu615g-MuiGrid-root > .MuiGrid-item {
+    padding-top: 0 !important;
+  }
+  .css-rxhftb-MuiGrid-root {
+    padding-bottom: 20px;
+    padding-left: 10px;
+  }
+  .css-spompt-MuiGrid-root {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1120px) {
+  .css-137v0wv-MuiGrid-root {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+}

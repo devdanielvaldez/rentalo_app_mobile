@@ -1,0 +1,263 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+.tab {
+  margin-left: 16px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  @media (--viewportLarge) {
+    margin-left: 24px;
+  }
+}
+
+.linkNoMark {
+  display: inline-block;
+  white-space: nowrap;
+  display: inline-block;
+  white-space: nowrap;
+  font: normal normal 600 16px/21px Nunito;
+  letter-spacing: 0px;
+  color: var(--matterColorDark);
+  transition: var(--transitionStyleButton);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--marketplaceColorDark);
+  }
+
+  @media (--viewportLarge) {
+    &:hover {
+    }
+  }
+
+  & > span {
+    padding-right: 20px;
+  }
+}
+
+.selectedLinkNoMark {
+  border-bottom-color: var(--matterColorDark);
+  color: var(--marketplaceColorDark);
+
+  @media (--viewportLarge) {
+    &:hover {
+    }
+  }
+}
+
+.link {
+  display: inline-block;
+  white-space: nowrap;
+  font: normal normal 600 16px/21px Nunito;
+  letter-spacing: 0px;
+  color: var(--matterColor);
+  transition: var(--transitionStyleButton);
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @media (--viewportLarge) {
+    &:hover {
+    }
+  }
+}
+
+.selectedLink {
+  border-bottom-color: var(--matterColorDark);
+  color: var(--matterColorDark);
+  font-weight: 700;
+
+  @media (--viewportLarge) {
+    &:hover {
+    }
+  }
+}
+
+.selectedLink > span {
+  padding-right: 20px;
+}
+
+.link > span {
+  padding-right: 20px;
+}
+
+.linkCompleted {
+  display: inline-block;
+  white-space: nowrap;
+  font: normal normal 600 16px/21px Nunito;
+  letter-spacing: 0px;
+  color: var(--matterColorDark);
+  transition: var(--transitionStyleButton);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--marketplaceColorDark);
+  }
+
+  @media (--viewportLarge) {
+    &:hover {
+    }
+  }
+}
+
+.selectedLinkCompleted {
+  border-bottom-color: var(--matterColorDark);
+  color: var(--marketplaceColorDark);
+}
+
+.selectedLinkCompleted > span {
+  /* complete  */
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M6.52 9.098c-.163.188-.397.3-.646.31h-.032c-.238 0-.466-.094-.635-.263L2.783 6.732c-.353-.35-.354-.92-.003-1.273.35-.353.92-.354 1.272-.004L5.794 7.19l4.59-5.278C9.287.738 7.73 0 6 0 2.686 0 0 2.686 0 6c0 3.313 2.686 6 6 6 3.313 0 6-2.687 6-6 0-.91-.21-1.772-.573-2.545L6.52 9.098z" fill="%232ECC71" fill-rule="evenodd"/></svg>') !important;
+
+  padding-right: 20px;
+  background-position: right;
+}
+
+.linkCompleted > span {
+  /* complete  */
+  background-image: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M6.52 9.098c-.163.188-.397.3-.646.31h-.032c-.238 0-.466-.094-.635-.263L2.783 6.732c-.353-.35-.354-.92-.003-1.273.35-.353.92-.354 1.272-.004L5.794 7.19l4.59-5.278C9.287.738 7.73 0 6 0 2.686 0 0 2.686 0 6c0 3.313 2.686 6 6 6 3.313 0 6-2.687 6-6 0-.91-.21-1.772-.573-2.545L6.52 9.098z" fill="%232ECC71" fill-rule="evenodd"/></svg>') !important;
+
+  padding-right: 20px;
+  background-position: right;
+}
+
+.disabled {
+  pointer-events: none;
+  color: var(--matterColorAnti);
+  text-decoration: none;
+}
+
+.firstLabel {
+  text-align: right;
+  color: var(--matterColorDark);
+  font-weight: var(--fontWeightSemiBold);
+  border-bottom: 1px solid var(--matterBorderColor);
+  padding-bottom: 10px;
+  padding-right: 10px;
+  font: normal normal bold 18px/20px Nunito;
+
+  @media only screen and (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.secondLabel {
+  text-align: right;
+  color: var(--matterColorDark);
+  font-weight: var(--fontWeightSemiBold);
+  font: normal normal bold 18px/20px Nunito;
+  border-bottom: 1px solid var(--matterBorderColor);
+  padding-bottom: 10px;
+  margin-top: 6pc;
+  padding-right: 10px;
+
+  @media only screen and (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.editlstingTabs,
+.verficationDetailsTab {
+  & .linkCompleted {
+    color: var(--marketplaceColorDark);
+    background-color: var(--matterColorLight);
+    padding: 10px 15px;
+    border-radius: 10px 10px 0 0;
+    font: normal normal bold 16px/20px Nunito;
+    border-top: solid 1px var(--matterBorderColor);
+    border-left: solid 1px var(--matterBorderColor);
+    border-right: solid 1px var(--matterBorderColor);
+
+    @media (--viewportLarge) {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+    }
+  }
+
+  & .linkNoMark {
+    color: var(--matterColorDark);
+    background-color: var(--matterColorLight);
+    padding: 10px 15px;
+    border-radius: 10px 10px 0 0;
+    font: normal normal bold 18px/20px Nunito;
+    border-top: solid 1px var(--matterBorderColor);
+    border-left: solid 1px var(--matterBorderColor);
+    border-right: solid 1px var(--matterBorderColor);
+
+    @media (--viewportLarge) {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+    }
+  }
+
+  & .link {
+    font: normal normal bold 16px/20px Nunito;
+    letter-spacing: 0px;
+    color: var(--matterColorAnti);
+    padding: 10px 15px;
+
+    @media (--viewportLarge) {
+      padding: 0;
+    }
+
+    &.selectedLink {
+      color: var(--matterColorDark);
+      background-color: var(--matterColorLight);
+      padding: 10px 15px;
+      border-radius: 10px 10px 0 0;
+      border-top: solid 1px var(--matterBorderColor);
+      border-left: solid 1px var(--matterBorderColor);
+      border-right: solid 1px var(--matterBorderColor);
+
+      @media (--viewportLarge) {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.inboxPageTabs {
+  & .link {
+    font: normal normal bold 18px/20px Nunito;
+    letter-spacing: 0px;
+    color: var(--matterColorAnti);
+    padding: 10px 15px;
+
+    @media (--viewportLarge) {
+      padding: 0;
+    }
+
+    &:hover {
+      color: var(--matterColorDark);
+    }
+
+    & > span {
+      padding-right: 0;
+
+      & > span {
+        &:last-child {
+          top: 0;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
